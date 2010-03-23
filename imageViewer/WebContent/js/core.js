@@ -1,31 +1,56 @@
 /**
- * @
+ * @name imageViewer
  */
-(function() {	
+(function() {
 	if( !imageViewer ) {
-		var imageViewer = window.imageViewer = {};
+		var imageViewer = window.imageViewer = { };
 	}
+})();
+
+/**
+ * @name define variables
+ */
+(function() {
+	daum.extend(imageViewer, { member : {} });
+	daum.extend(imageViewer.member, {
+		currentPage : 1,		
+		canvas : {
+			id : 'imageCanvas',
+			el : null
+		},
+		data : {
+			
+		}
+	});
+})();
+
+/**
+ * @name Initialize
+ * @description Initialize Class
+ */
+(function() {
+	daum.extend(imageViewer, {
+		init : function() {
+			console.log('init');			
+		}
+	});
 })();
 
 /**
  * @name Action
  * @description Action Class
  */
-(function() {	
-	daum.extend(imageViewer, { Action : {} });
+(function() {
+	daum.extend(imageViewer, { action : {} });
 	daum.extend(imageViewer.Action, {		
 		goNext : function() {
-			alert('goNext');
+			console.log('goNext');
 		},
 		goPrev : function() {
-			alert('goPrev');
+			console.log('goPrev');
+		},
+		draw : function() {
+			console.log('draw');
 		}
 	});
-})();
-
-var viewer = imageViewer;
-viewer.Action.goNext();
-
-(function() {
-	
 })();
