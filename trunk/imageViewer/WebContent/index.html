@@ -8,11 +8,15 @@
 <script type="text/javascript" src="./js/data.js" charset="utf-8"></script>
 </head>
 <body>
-<div id="photoCanvas"></div>
-<button id="goPrev"></button>
-<button id="goNext"></button>
+<div id="imageViewer">
+	<div id="photoCanvas"></div>
+	<button class="goPrev">이전</button>
+	<button class="goNext">다음</button>
+</div>
+
 <script type="text/javascript">
-imageViewer.setData(data);
+var IV = imageViewer.setData(data);
+console.log(IV.DTO.getData());
 </script>
 </body>
 </html>

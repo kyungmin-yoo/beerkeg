@@ -18,9 +18,8 @@
 			id : 'imageCanvas',
 			el : null
 		},
-		data : {
-			
-		}
+		prev : $$('.goPrev') || null,
+		next : $$('.goNext') || null		
 	});
 })();
 
@@ -32,6 +31,18 @@
 	daum.extend(imageViewer, {
 		init : function() {
 			console.log('init');			
+		}
+	});
+})();
+
+/**
+ * @name DTO
+ */
+(function() {
+	daum.extend(imageViewer, { DTO : {} });
+	daum.extend(imageViewer.DTO, {
+		getData : {
+		
 		}
 	});
 })();
