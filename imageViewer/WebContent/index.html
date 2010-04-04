@@ -3,20 +3,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>image viewer</title>
+<link rel="stylesheet" href="./QUnit/qunit.css" type="text/css" charset="utf-8"></link>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> -->
 <script type="text/javascript" src="./js/jigu.js" charset="utf-8"></script>
 <script type="text/javascript" src="./js/core.js" charset="utf-8"></script>
 <script type="text/javascript" src="./js/data.js" charset="utf-8"></script>
+<script type="text/javascript" src="./QUnit/qunit.js" charset="utf-8"></script>
+<!-- <script type="text/javascript" src="./js/test-DOM.js" charset="utf-8"></script> -->
+<script type="text/javascript" src="./js/test-DTO.js" charset="utf-8"></script>
 </head>
 <body>
 <div id="imageViewer">
-	<div id="photoCanvas"></div>
-	<button class="goPrev">이전</button>
-	<button class="goNext">다음</button>
+	<div id="canvas1" class="photoCanvas"></div>
+	<button class="btnPrev">이전</button>
+	<button class="btnNext">다음</button>
+</div>
+
+<div id="imageViewer2">
+	<div id="canvas2" class="photoCanvas"></div>
+	<button class="btnPrev">이전</button>
+	<button class="btnNext">다음</button>
 </div>
 
 <script type="text/javascript">
-var IV = imageViewer.setData(data);
-console.log(IV.DTO.getData());
+var iv1 = imageViewer.init("imageViewer");
+var iv2 = imageViewer.init("imageViewer2");
 </script>
+
+<br><br>
+
+<h1 id="qunit-header">image viewer</h1>
+<h2 id="qunit-banner"></h2>
+<h2 id="qunit-userAgent"></h2>
+<ol id="qunit-tests"></ol>
+
 </body>
 </html>
