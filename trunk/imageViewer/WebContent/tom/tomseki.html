@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="verify-v1" content="peGdOTYWnXshDm4/MVZH4c1OH+VnlJ0nXI0BI4nAIt8=" />
+<meta name="verify-v1" content="zP8y33VlWOxc+pOR5E7V28Dg5ndfRqH8vJ9vvTiBdWw=" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="autocomplete" content="off">
+<title>TOMSEKI - Daum 영화</title>
+<script type="text/javascript" src="http://movie.daum.net/js/jigu.js?ver=090090815" charset="utf-8"></script>
+<script type="text/javascript" src="./tom.js?ver=090090815" charset="utf-8"></script>
+<script type="text/javascript" src="./crater.js?ver=090090815" charset="utf-8"></script>
+	<style>
+		body {font:12px/1.5em dotum;}
+		ul {list-style:none;padding-left:0;margin:0;}
+		input {margin:0;vertical-align:middle;}
+		
+		#tomseki {width:978px;}
+		
+		.directory {margin-bottom:10px;border-top:1px solid black;padding-top:9px;}
+		.directory .dirTitle {float:left;margin:0;width:60px;font:bold 12px/1.5em dotum;}
+		.directory ul {overflow:hidden;}
+		.directory ul li {float:left;width:99px;letter-spacing:-1px;}
+		.directory ul li.on {font-weight:bold;background-color:yellow;}
+		.directory input[type=checkbox],
+		.directory input[type=radio] {display:none;}
+		.directory .tabControl {display:inline-block;position:relative;overflow:visible;height:50px;}
+		.directory .tabControl .tab {float:left;width:auto;margin-right:10px;}
+		.directory .tabControl .tab .tabBody {position:absolute;left:0;width:918px;}
+		.directory .tabControl .tab .tabBody li {float:left;}	
+		.directory#country .dirTitle {height:70px;}
+		.directory#releaseSlider {height:40px;}
+		.directory#releaseSlider .slider {float:left;padding-top:7px;}
+		
+		
+		.slider {display:inline-block;position:relative;width:200px;}
+		.slider .sliderBackground {position:absolute;width:100%;height:3px;background-color:black;}
+		.slider .sliderHandle {position:absolute;overflow:visible;width:100%;list-style:none;padding:0;margin:0;}
+		.slider .sliderHandle li {display:block;width:16px;margin-top:-8px;}
+		.slider .sliderHandle li img {position:relative;}
+		.slider .sliderHandle li .toolTip {position:relative;}
+		.slider .sliderHandle .leftHandle {position:absolute;left:16px;top:0;}
+		.slider .sliderHandle .leftHandle img {right:16px;}
+		.slider .sliderHandle .leftHandle .toolTip {right:24px;}
+		.slider .sliderHandle .rightHandle {position:absolute;left:184px;top:0;}
+		.slider .sliderHandle .rightHandle .toolTip {}
+		
+		.tabControl ul {list-style:none;padding-left:0;}
+		.tabControl .tab {float:left;}
+	
+		#tomList {display:inline-block;width:1005px;padding:0;margin:0;list-style:none;}
+		#tomList li {float:left;margin-right:15px;}
+		#tomList li.iRight {margin-right:0;}
+	</style>
+</head>
+<body>
+	<form id="tomseki" action="tomseki.html">
+		<div id="genre" class="directory">
+			<h3 class="dirTitle">장르</h3>
+			<ul class="checkBoxList">
+				<li>
+					<input name="genreId" id="genre_all" value="-1" type="checkbox" checked><label for="genre_all" class="on">전체</label>
+				</li><li>
+					<input name="genreId" id="genre_9" value="9" type="checkbox"><label for="genre_9">SF</label>
+				</li><li>
+					<input name="genreId" id="genre_11" value="11" type="checkbox"><label for="genre_11">공포</label>
+				</li><li>
+					<input name="genreId" id="genre_20" value="20" type="checkbox"><label for="genre_20">드라마</label>
+				</li><li>
+					<input name="genreId" id="genre_3" value="3" type="checkbox"><label for="genre_3">로맨스/멜로</label>
+				</li><li>
+					<input name="genreId" id="genre_14" value="14" type="checkbox"><label for="genre_14">무협</label>
+				</li><li>
+					<input name="genreId" id="genre_12" value="12" type="checkbox"><label for="genre_12">뮤지컬</label>
+				</li><li>
+					<input name="genreId" id="genre_4" value="4" type="checkbox"><label for="genre_4"">범죄</label>
+				</li><li>
+					<input name="genreId" id="genre_15" value="15" type="checkbox"><label for="genre_15">서부</label>
+				</li><li>
+					<input name="genreId" id="genre_7" value="7" type="checkbox"><label for="genre_7">스릴러</label>
+				</li><li>
+					<input name="genreId" id="genre_16" value="16" type="checkbox"><label for="genre_16">시대극</label>
+				</li><li>
+					<input name="genreId" id="genre_19" value="19" type="checkbox"><label for="genre_19">애니메이션</label>
+				</li><li>
+					<input name="genreId" id="genre_5" value="5" type="checkbox"><label for="genre_5">액션</label>
+				</li><li>
+					<input name="genreId" id="genre_17" value="17" type="checkbox"><label for="genre_17">어드벤처</label>
+				</li><li>
+					<input name="genreId" id="genre_13" value="13" type="checkbox"><label for="genre_13">전쟁</label>
+				</li><li>
+					<input name="genreId" id="genre_1" value="1" type="checkbox"><label for="genre_1">코미디</label>
+				</li><li>
+					<input name="genreId" id="genre_10" value="10" type="checkbox"><label for="genre_10">판타지</label>
+				</li>
+			</ul>
+		</div>
+		<div id="country" class="directory">
+			<h3 class="dirTitle">국가</h3>
+			<ul class="radioList">
+				<li>
+					<input name="countryId" id="country_all" value="-1" type="radio" checked><label for="country_all" class="on">전체</label>
+				</li><li>
+					<input name="countryId" id="country_9" value="9" type="radio"><label for="country_9">한국</label>
+				</li><li>
+					<input name="countryId" id="country_11" value="11" type="radio"><label for="country_11">미국</label>
+				</li><li>
+					<input name="countryId" id="country_20" value="20" type="radio"><label for="country_20">일본</label>
+				</li><li>
+					<input name="countryId" id="country_3" value="3" type="radio"><label for="country_3">중국</label>
+				</li><li>
+					<input name="countryId" id="country_14" value="14" type="radio"><label for="country_14">과테말라</label>
+				</li><li>
+					<input name="countryId" id="country_12" value="12" type="radio"><label for="country_12">아르헨티나</label>
+				</li><li>
+					<input name="countryId" id="country_4" value="4" type="radio"><label for="country_4"">브라질</label>
+				</li><li>
+					<input name="countryId" id="country_15" value="15" type="radio"><label for="country_15">남아공</label>
+				</li><li>
+					<input name="countryId" id="country_7" value="7" type="radio"><label for="country_7">이탈리아</label>
+				</li><li>
+					<input name="countryId" id="country_16" value="16" type="radio"><label for="country_16">이라크</label>
+				</li><li>
+					<input name="countryId" id="country_19" value="19" type="radio"><label for="country_19">사우디아라비아</label>
+				</li><li>
+					<input name="countryId" id="country_5" value="5" type="radio"><label for="country_5">이란</label>
+				</li><li>
+					<input name="countryId" id="country_17" value="17" type="radio"><label for="country_17">베트남</label>
+				</li><li>
+					<input name="countryId" id="country_13" value="13" type="radio"><label for="country_13">인도</label>
+				</li><li>
+					<input name="countryId" id="country_1" value="1" type="radio"><label for="country_1">영국</label>
+				</li><li>
+					<input name="countryId" id="country_10" value="10" type="radio"><label for="country_10">경상도</label>
+				</li>
+			</ul>
+			<ul class="tabControl">
+				<li class="tab">
+					<a class="tabHeader" href="javascript:;">ㄱ</a>
+					<ul class="checkBoxList tabBody" style="display:none;">
+						<li class="on"><input name="countryId" id="country_21" value="21" type="radio"><label for="country_21">가나</label></li>
+						<li><input name="countryId" id="country_22" value="22" type="radio"><label for="country_22">가봉</label></li>
+						<li><input name="countryId" id="country_23" value="23" type="radio"><label for="country_23">감비아</label></li>
+						<li><input name="countryId" id="country_24" value="24" type="radio"><label for="country_24">가나</label></li>
+						<li><input name="countryId" id="country_25" value="25" type="radio"><label for="country_25">갈라파고스</label></li>
+						<li><input name="countryId" id="country_26" value="26" type="radio"><label for="country_26">구텐탁</label></li>
+						<li><input name="countryId" id="country_27" value="27" type="radio"><label for="country_27">고아라</label></li>
+						<li><input name="countryId" id="country_28" value="28" type="radio"><label for="country_28">고아성</label></li>
+						<li><input name="countryId" id="country_29" value="29" type="radio"><label for="country_29">김홍규</label></li>
+						<li><input name="countryId" id="country_30" value="30" type="radio"><label for="country_30">김치</label></li>
+						<li><input name="countryId" id="country_31" value="31" type="radio"><label for="country_31">그리스</label></li>
+						<li><input name="countryId" id="country_32" value="32" type="radio"><label for="country_32">가브리엘</label></li>
+						<li><input name="countryId" id="country_33" value="33" type="radio"><label for="country_33">까마귀</label></li>
+						<li><input name="countryId" id="country_34" value="34" type="radio"><label for="country_34">꼴데</label></li>
+						<li><input name="countryId" id="country_35" value="35" type="radio"><label for="country_35">가르시아</label></li>
+					</ul>
+				</li>
+				<li class="tab">
+					<a class="tabHeader" href="javascript:;">ㄴ</a>
+					<ul class="checkBoxList tabBody" style="display:none;">
+						<li class="on"><input name="countryId" id="country_38" value="38" type="radio"><label for="country_38">나이지리아</label></li>
+						<li><input name="countryId" id="country_36" value="36" type="radio"><label for="country_36">네덜란드</label></li>
+						<li><input name="countryId" id="country_37" value="37" type="radio"><label for="country_37">노르웨이</label></li>
+					</ul>
+				</li>
+				<li class="tab">
+					<a class="tabHeader" href="javascript:;">ㄷ</a>
+					<ul class="checkBoxList tabBody" style="display:none;">
+						<li class="on"><input name="countryId" id="country_39" value="39" type="radio"><label for="country_39">달나라</label></li>
+						<li><input name="countryId" id="country_40" value="40" type="radio"><label for="country_40">다음랜드</label></li>
+						<li><input name="countryId" id="country_41" value="41" type="radio"><label for="country_41">덜덜란드</label></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="releaseSlider" class="directory" >
+			<h3 class="dirTitle">제작년도</h3>
+			<div class="slider">
+				<div class="sliderBackground"></div>
+				<ul class="sliderHandle">
+					<li class="leftHandle">
+						<img src="http://sstatic.naver.com/search/images11/btn_scroll01_l.png" width="16" height="16">
+						<span class="toolTip">1900</span>
+					</li>
+					<li class="rightHandle">
+						<img src="http://sstatic.naver.com/search/images11/btn_scroll01_r.png" width="16" height="16">
+						<span class="toolTip">2010</span>
+					</li>
+				</ul>
+			</div>
+			<div style="float:left;">
+				<input name="startYear" id="releaseSlider_Left" value="1900" type="text">
+				<input name="endYear" id="releaseSlider_Right" value="2010" type="text">
+			</div>
+		</div>
+		<div style="clear:both;">
+			<input type="button" value="막장드라마" onclick="t.setJSON(soapJson); return false">
+			<input type="button" value="알자지라" onclick="t.setJSON(muslimJson); return false">
+			<input type="button" value="7080한국방화" onclick="t.setJSON(romanceJson); return false">
+			<br>
+			<input type="button" value="render!" onclick="tomList.setJSONArray(testJsonArr); return false">
+			<br>
+			<input type="submit" value="확인">
+		</div>
+	</form>
+	<ul id="tomList">
+	</ul>
+	
+	<script>
+		var t = new tom.Controller.TomController(daum.$("tomseki"), 3);
+
+		
+		var template = '<li class="#{className}"><img src="#{img.src}" width="#{img.width}" height="#{img.height}"><p>#{title}</p></li>';
+		var testJsonArr = [ 
+			{	
+				type : "movie", // {movie||person||play}
+				id : 123123,
+				className : "",
+				titleENG : "THE LOVELY BONES",
+				titleKR : "사랑스러운 뼈다귀",
+				img : {
+					src : "http://cfile89.uf.daum.net/C155x225/15110E224ACEF4AD50C0BF",
+					width : 155,
+					height : 255
+				}
+			},
+			{	
+				type : "movie", // {movie||person||play}
+				id : 123123,
+				className : "",
+				titleENG : "THE LOVELY BONES",
+				titleKR : "사랑스러운 뼈다귀",
+				img : {
+					src : "http://cfile89.uf.daum.net/C155x225/15110E224ACEF4AD50C0BF",
+					width : 155,
+					height : 255
+				}
+			}
+		];
+		var tomList = new tom.Controller.Renderer(daum.$("tomList"), template);
+		var soapJson = {
+			genre : {
+				genre_20 : true,
+				genre_11 : true
+			},
+			country : {
+				country_9 : true
+			}
+		};
+		var muslimJson = {
+			genre : {
+				genre_11 : true,
+				genre_14 : true,
+				genre_13 : true
+			},
+			country : {
+				country_16 : true
+			}
+		};
+		var romanceJson = {
+			genre : {
+				genre_3 : true
+			},
+			country : {
+				country_9 : true
+			},
+			releaseSlider : {
+				releaseSlider_Left : 1970,
+				releaseSlider_Right : 1980
+			}
+		};
+
+		var testTab = new tom.Controller.TabController($$("#country .tabControl")[0]);
+	</script>
+</body>
+</html>
