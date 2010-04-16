@@ -7,6 +7,7 @@
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> -->
 <script type="text/javascript" src="./js/jigu.js" charset="utf-8"></script>
 <script type="text/javascript" src="./js/core.js" charset="utf-8"></script>
+<script type="text/javascript" src="./js/DOM.js" charset="utf-8"></script>
 <script type="text/javascript" src="./js/data.js" charset="utf-8"></script>
 <script type="text/javascript" src="./QUnit/qunit.js" charset="utf-8"></script>
 <script type="text/javascript" src="./js/test-DOM.js" charset="utf-8"></script>
@@ -26,8 +27,10 @@
 </div>
 
 <script type="text/javascript">
-var iv1 = imageViewer.init("imageViewer");
-var iv2 = imageViewer.init("imageViewer2");
+var iv1 = new imageViewer.init("imageViewer");
+var iv2 = new imageViewer.init("imageViewer2");
+console.log(iv1);
+console.log(iv2);
 </script>
 
 <br><br>
