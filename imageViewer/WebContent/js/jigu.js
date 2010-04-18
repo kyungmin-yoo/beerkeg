@@ -3,9 +3,9 @@
  * Copyright (c) 2009 Front-end Technology Center, Daum Communications.
  * 
  * $Version : 1.0 $
- * $Date : 2010-01-21 13:41 $
- * $Revision : 158 $
- * $Build : 433 $
+ * $Date : 2010-04-07 15:02 $
+ * $Revision : 168 $
+ * $Build : 467 $
  * 
  * Project site: http://play.daumcorp.com/display/ftguide/Jigu+Javascript+Framework
  * Licensed under Daum Common License : http://dna.daumcorp.com/forge/docs/daum-license-1.0.txt
@@ -42,7 +42,7 @@ if(!window.daum || !window.daum.extend){
 	 * @return Object
 	 */
 	daum.extend = function(dest, source, overwrite){
-		var ow = overwrite !== undefined ? overwrite : true, p;
+		var ow = overwrite !== undefined ? overwrite: true, p;
 		for(p in source){
 			if(!dest[p] || ow){
 				dest[p] = source[p];
@@ -58,13 +58,13 @@ daum.extend(daum,{
 	 * @field
 	 * @name daum.version 
 	 */
-	version : '1.0_r158',
+	version: '1.0_r168',
 	/**
 	 * Array 관련 메소드를 제공한다.
 	 * @namespace Array 관련 메소드를 제공한다.
 	 * @name daum.Array
 	 *//** @ignore */
-	Array : {
+	Array: {
 		/**
 		 * null 이나 undefined 값을 가지지 않는 배열을 리턴한다.
 		 * <pre name="code" class="js:nogutter:nocontrols">
@@ -77,7 +77,7 @@ daum.extend(daum,{
 		 * @param Array a
 		 * @return Array
 		 */
-		compact : function(a){
+		compact: function(a){
 			if(!a)return [];
 			var ret = [], i;
 			for(i=0; i<a.length; i+=1){
@@ -95,7 +95,7 @@ daum.extend(daum,{
 		 * @param Array a
 		 * @param Function func
 		 */
-		each : function(a, func){
+		each: function(a, func){
 			for(var i=0; i<a.length; i+=1){
 				func(a[i], i);
 			}
@@ -109,7 +109,7 @@ daum.extend(daum,{
 		 * @param Object _find
 		 * @return Number position 
 		 */
-		indexOf : function(/*a, _find*/){
+		indexOf: function(/*a, _find*/){
 			if([].indexOf){
 				return function(a, _find){
 					return a.indexOf(_find);
@@ -135,7 +135,7 @@ daum.extend(daum,{
 		 * @return Boolean
 		 * @since v1.0_r126
 		 */
-		contains : function(a, _find){
+		contains: function(a, _find){
 			return a.indexOf(_find) > -1;
 		}
 	}, 
@@ -145,40 +145,40 @@ daum.extend(daum,{
 	 * @namespace 사용자의 브라우저에 관련된 각종 property와 method를 제공한다.
 	 * -- 아래와 같이 브라우저/OS정보를 Boolean으로 제공한다.
 	 * <pre name="code" class="js:nogutter:nocontrols">
-	 * daum.Browser.ie : IE
-	 * daum.Browser.ie_sv1 : IE ServicePack1
-	 * daum.Browser.ie_sv2 : IE ServicePack2
-	 * daum.Browser.ie6 : IE6
-	 * daum.Browser.ie7 : IE7
-	 * daum.Browser.ie8 : IE8
-	 * daum.Browser.ff : Firefox
-	 * daum.Browser.ff2 : Firefox3
-	 * daum.Browser.ff3 : Firefox3
-	 * daum.Browser.sf : Safari
-	 * daum.Browser.op : Opera
-	 * daum.Browser.cr : Chrome
-	 * daum.Browser.ns : Netscape
-	 * daum.Browser.gecko : Gecko
-	 * daum.Browser.infopath : Infopath
+	 * daum.Browser.ie: IE
+	 * daum.Browser.ie_sv1: IE ServicePack1
+	 * daum.Browser.ie_sv2: IE ServicePack2
+	 * daum.Browser.ie6: IE6
+	 * daum.Browser.ie7: IE7
+	 * daum.Browser.ie8: IE8
+	 * daum.Browser.ff: Firefox
+	 * daum.Browser.ff2: Firefox3
+	 * daum.Browser.ff3: Firefox3
+	 * daum.Browser.sf: Safari
+	 * daum.Browser.op: Opera
+	 * daum.Browser.cr: Chrome
+	 * daum.Browser.ns: Netscape
+	 * daum.Browser.gecko: Gecko
+	 * daum.Browser.infopath: Infopath
 	 * daum.Browser.etc
 	 * 
-	 * daum.Browser.win : Windows
-	 * daum.Browser.vista : Windows Vista
-	 * daum.Browser.mac : Mac
-	 * daum.Browser.unix : Unix(Linux)
+	 * daum.Browser.win: Windows
+	 * daum.Browser.vista: Windows Vista
+	 * daum.Browser.mac: Mac
+	 * daum.Browser.unix: Unix(Linux)
 	 * </pre>
 	 * @name daum.Browser
 	 */	
-	Browser : {
+	Browser: {
 		/**
 		 * user agent string, 즉 navigator.userAgent.toLowerCase()값을 반환한다.
 		 * @name daum.Browser.ua
 		 * @field
 		 * @type String
 		 */
-		ua : navigator.userAgent.toLowerCase(),
+		ua: navigator.userAgent.toLowerCase(),
 		/** @ignore **/
-		offset : { width : 0, height:0 },
+		offset: { width: 0, height:0 },
 		/**
 		 * ua를 분석하여 browser값을 정의한다.
 		 * @name daum.Browser.init
@@ -186,7 +186,7 @@ daum.extend(daum,{
 		 * @function
 		 * @constructor
 		 */
-		browserInit : function(){
+		browserInit: function(){
 			this.ie = this.ua.indexOf("msie") != -1;		
 			this.ie_sv1 = this.ua.indexOf("sv1") != -1;
 			this.ie_sv2 = this.ua.indexOf("sv2") != -1;
@@ -224,7 +224,7 @@ daum.extend(daum,{
 		 * @name daum.Browser.versioning
 		 * @function
 		 */
-		versioning : function(){
+		versioning: function(){
 			if(this.ie){						
 				if(this.ie8){this.ie7=this.ie6=this.ie_sv2=this.ie_sv1=false;}			
 				if(this.ie7){this.ie6 = this.ie_sv2 = this.ie_sv1 = false;}						
@@ -239,7 +239,7 @@ daum.extend(daum,{
 	 * @namespace DOM객체를 다루기 위한 편리한 인터페이스를 제공한다. 
 	 * @name daum.Element
 	 */	
-	Element : {
+	Element: {
 		/**
 		 * 객체 el의 하위 노드들중 빈 텍스트(스페이스,줄바꿈 등)를 가진 노드들을 삭제한다.
 		 * 비IE브라우저에서는 el.childNodes에서 공백을 텍스트노드로 반환하는데, 
@@ -250,7 +250,7 @@ daum.extend(daum,{
 		 * @return Element el
 		 * @since v1.0_r135
 		 */
-		cleanBlankNodes : function(el){
+		cleanBlankNodes: function(el){
 			var e = daum.$(el), i = e.firstChild;
 			try{
 				do {
@@ -268,7 +268,7 @@ daum.extend(daum,{
 		 *  @param Element el
 		 *  @return Array
 		 */
-		getChildElements : function(el){
+		getChildElements: function(el){
 			//if(el.querySelectorAll){ // querySelectorAll메소드 존재할 경우 -- 좀 테스트 필요
 				//return daum.$A(el.querySelectorAll(":not(:only-child)"));
 			//}
@@ -295,17 +295,24 @@ daum.extend(daum,{
 		 * @param String cname
 		 * @return {Array[Element]}
 		 */
-		getElementsByClassName : function(el, cname){
-			if(document.getElementsByClassName.toString().indexOf('code')>0){ // native code 가 있을 경우
+		getElementsByClassName: function(el, cname){
+			// native code 가 있을 경우
+			if(document.getElementsByClassName.toString().indexOf('code')>0){
 				return daum.$A(el.getElementsByClassName(cname));
 			}
+			// sizzle selector를 이용
+			var is = el == document || el == document.body || el == window;
+			if(is || el.id){
+				return daum.$$((is ? '' : '#'+el.id+' ') + '.'+daum.String.trim(cname).replace(/\s+/g,'.'));
+			}
+			// 많이 힘든 경우
 			var nodes = daum.$(el).getElementsByTagName("*"), element = [], i;
 			for(i=0; i<nodes.length; i+=1){
 				if(daum.Element.hasClassName(nodes[i], cname)){
 					element.push(nodes[i]);
 				}
 			}
-			return (element.length > 0) ? element : [];
+			return (element.length > 0) ? element: [];
 		},
 
 		/**
@@ -316,7 +323,7 @@ daum.extend(daum,{
 		 * @param Element el
 		 * @return Element
 		 */		
-		getFirstChild : function(el){
+		getFirstChild: function(el){
 			var fchild = daum.$(el).firstChild;
 			while(fchild && fchild.nodeType !== 1){fchild = fchild.nextSibling;}
 			return fchild;
@@ -335,7 +342,7 @@ daum.extend(daum,{
 				lchild = lchild.previousSibling;
 			}
 			return lchild;
-		},		
+		},
 		/**
 		 * 현재 객체 el의 nextSibling을 반환한다. 
 		 * 텍스트 노드일 경우는 무시하고 DOM 객체만을 반환한다.
@@ -344,7 +351,7 @@ daum.extend(daum,{
 		 * @param Element el
 		 * @return Element
 		 */
-		getNext : function(el){
+		getNext: function(el){
 			var next = daum.$(el).nextSibling;
 			while(next && next.nodeType !== 1){next = next.nextSibling;}
 			return next;
@@ -357,7 +364,7 @@ daum.extend(daum,{
 		 * @param Element el
 		 * @return Element
 		 */
-		getPrev : function(el){
+		getPrev: function(el){
 			var prev = daum.$(el).previousSibling;
 			while(prev && prev.nodeType !== 1){prev = prev.previousSibling;}
 			return prev;
@@ -369,7 +376,7 @@ daum.extend(daum,{
 		 * @param Element el
 		 * @return Element
 		 */		
-		getParent : function(el){
+		getParent: function(el){
 			return daum.$(el).parentNode;
 		},
 		/**
@@ -382,13 +389,13 @@ daum.extend(daum,{
 		 * @param Element [parent]
 		 * @return Object {left:x,top:x,right:x,bottom:x}
 		 */				
-		getCoords : function(el, useOffset, parent){
+		getCoords: function(el, useOffset, parent){
 			var uo = useOffset || false,
 				pa = daum.$(parent) || false,
 				e = daum.$(el),
 				w = e.offsetWidth,
 				h = e.offsetHeight,
-				coords = { "left" : 0, "top" : 0, "right" : 0, "bottom" : 0 },
+				coords = { "left": 0, "top": 0, "right": 0, "bottom": 0 },
 				p;
 			while(e){
 				coords.left += e.offsetLeft || 0;
@@ -428,7 +435,7 @@ daum.extend(daum,{
 		 * // 아래와 같이 쓸 수도 있다.
 		 * var fs = daum.Element.getStyle('test','fontSize') // 12px
 		 * </pre>
-		 * <strong>warning : 느려질 수 있으니 조심해서 사용하세요!</strong> 
+		 * <strong>warning: 느려질 수 있으니 조심해서 사용하세요!</strong> 
 		 * @name daum.Element.getStyle
 		 * @function
 		 * @param Element el
@@ -436,25 +443,25 @@ daum.extend(daum,{
 		 * @param String [mozCssProperty]
 		 * @return String
 		 */
-		getStyle : function(el, cssProp, mozCssProperty){
+		getStyle: function(el, cssProp, mozCssProperty){
 			var e = daum.$(el), result, cp,
 				cssProperty,
 	   			mozcssproperty = mozCssProperty || cssProp;
 			if(cssProp.toLowerCase()=='float'){
-				cssProperty = (daum.Browser.ie) ? 'styleFloat' : 'cssFloat'; 
+				cssProperty = (daum.Browser.ie) ? 'styleFloat': 'cssFloat'; 
 			} else {
 				cssProperty = cssProp;
 			}
 			if(e.currentStyle){
 				cp = (cssProperty.indexOf('-')!==-1) ? 
 						cssProperty.replace(/[\-](.)/g, 
-								function(s,t){return t.toUpperCase();}) : 
+								function(s,t){return t.toUpperCase();}): 
 						cssProperty;
 				result = e.currentStyle[cp];
 			} else {
 				cp = (/[A-Z]/.test(mozcssproperty)) ? 
 						mozcssproperty.replace(/([A-Z])/g, 
-								function(s,t){return '-'+t.toLowerCase();}) : 
+								function(s,t){return '-'+t.toLowerCase();}): 
 						mozcssproperty;
 				result = document.defaultView.getComputedStyle(e, null)
 							.getPropertyValue(cp);
@@ -480,14 +487,20 @@ daum.extend(daum,{
 		 * @param String cname
 		 * @return Boolean
 		 */
-		hasClassName : function(el, cname){
-			var c = daum.String.trim(cname.replace(/\s+/g,' ')).split(' '),
-				cn = daum.String.trim(daum.$(el).className).split(' '), 
-				result = 0, i;
-			for(i=0;i<c.length;i+=1){
-			    if (daum.Array.indexOf(cn, c[i]) < 0){return false;}
+		hasClassName: function(el, cname){
+			var cn = daum.String.trim(daum.$(el).className), ca = daum.String.trim(cname), 
+				result = 0, x, xn, ret;
+			if(ca.indexOf(' ')>0){
+				x = ca.replace(/\s+/g,' ').split(' '), xn = cn.split(' ');
+				x.each(function(mx){
+					result += (xn.indexOf(mx) > -1) ? 1 : 0;
+				});
+				ret = x.length === result;
+			} else {
+				ret = cn.length > 0 && (cn == ca || 
+					new RegExp("(^|\\s)" + ca + "(\\s|$)").test(cn));
 			}
-			return true;
+			return ret;
 		},
 		/**
 		 * 현재 객체 el의 display style 속성을 검사하여 현재 보여지고 있는 객체인지를 검사한다.
@@ -496,7 +509,7 @@ daum.extend(daum,{
 		 * @param Element el
 		 * @return Boolean
 		 */		
-		visible : function(el){
+		visible: function(el){
 			var e = daum.$(el);
 			return !(e.offsetWidth === 0 && e.offsetHeight === 0);
 		},
@@ -515,7 +528,7 @@ daum.extend(daum,{
 		 * @param String [display] inline...
 		 * @return Element el
 		 */		
-		show : function(el, display){
+		show: function(el, display){
 			var e = daum.$(el); 
 			e.style.display = display || 'block';
 			return e;
@@ -527,7 +540,7 @@ daum.extend(daum,{
 		 * @param Element el
 		 * @return Element el
 		 */				
-		hide : function(el){
+		hide: function(el){
 			var e = daum.$(el);
 			e.style.display = "none";
 			return e;
@@ -550,10 +563,10 @@ daum.extend(daum,{
 		 * @param String [display] inline...
 		 * @return Element el
 		 */					
-		toggle : function(el, display){
+		toggle: function(el, display){
 			var e = daum.$(el);
 			return (daum.Element.visible(e)) ? 
-					daum.Element.hide(e) : 
+					daum.Element.hide(e): 
 					daum.Element.show(e, display || 'block');
 		},
 		
@@ -565,11 +578,11 @@ daum.extend(daum,{
 		 * @param String el
 		 * @return Element el
 		 */
-		addClassName : function(el, cname){
+		addClassName: function(el, cname){
 			var e = daum.$(el);
 			if(daum.Element.hasClassName(e, cname)){return e;} 
 			e.className = (daum.String.trim(e.className) === '') ? 
-					cname : e.className + ' ' + cname;
+					cname: e.className + ' ' + cname;
 			return e;
 		},
 		/**
@@ -580,7 +593,7 @@ daum.extend(daum,{
 		 * @param String cname
 		 * @return Element el
 		 */
-		removeClassName : function(el, cname){
+		removeClassName: function(el, cname){
 			return daum.Element.replaceClassName(el, cname, '');
 		},
 		/**
@@ -592,7 +605,7 @@ daum.extend(daum,{
 		 * @param String tgt(className)
 		 * @return Element el
 		 */
-		replaceClassName : function(el, src, tgt){
+		replaceClassName: function(el, src, tgt){
 			var e = daum.$(el),
 				classNames =e.className.split(' '), i;
 			for(i=0;i<classNames.length;i+=1){
@@ -607,9 +620,9 @@ daum.extend(daum,{
 		 * @name daum.Element.setOpacity
 		 * @function
 		 * @param Element el
-		 * @param Float op : 0~1.0
+		 * @param Float op: 0~1.0
 		 */
-		setOpacity : function(el, op){
+		setOpacity: function(el, op){
 			var e = daum.$(el);
 			e.style.filter='alpha(opacity='+op*100+')';
 			e.style.opacity = e.style.MozOpacity = e.style.KhtmlOpacity = op;
@@ -622,46 +635,53 @@ daum.extend(daum,{
 	 * @namespace Event 객체를 손쉽게 관리하기 위해 제공하는 객체이다. 
 	 * @name daum.Event
 	 */	
-	Event : {
+	Event: {
 		/**
 		 * Event Observer
 		 * @name daum.Event.observer
 		 * @field
 		 * @type Array
 		 */
-		observer : [],
-		crossEvent : function(/*src, type, handler, isCapture*/){
+		observer: [],
+		EVENTID : 0,
+		crossEvent : function(/*o*/){
 			var methods = {};
-			methods.add = (!!document.addEventListener) ? 
-						function(src, type, handler, isCapture){		  
-							if(type.toLowerCase()=="mousewheel"){type="DOMMouseScroll";}
-							src.addEventListener(type, handler, isCapture || false);					
-						} : 
-						function(src, type, handler){				 
-							if(type.toLowerCase()=="dommousescroll"){type="mousewheel";}
-							//if(!handler.__Binded) handler = daum.Function.bindAsEventListener(handler, src);
-							src.attachEvent("on"+type, handler);				
-						};
-			methods.remove = (!!document.addEventListener) ?
-						function(src, type, handler, isCapture){
-							if(type.toLowerCase()=="mousewheel"){type="DOMMouseScroll";}
-							src.removeEventListener(type , handler, isCapture || false);
-						} :
-						function(src, type, handler){
-							if(type.toLowerCase()=="dommousescroll"){type="mousewheel";}
-							src.detachEvent("on"+type, handler);
-						};
+			if(!!document.addEventListener){
+				methods.add = function(o){					
+					var type = o.type;
+					if(type.toLowerCase()=="mousewheel" && daum.Browser.ff) type="DOMMouseScroll";
+					o.src.addEventListener(type, o.handler, o.isCapture);					
+				};
+				methods.remove = function(o){
+					var type = o.type;
+					if(type.toLowerCase()=="mousewheel" && daum.Browser.ff) type="DOMMouseScroll";
+					o.src.removeEventListener(type, o.handler, o.isCapture);
+				};
+			}else{
+				methods.add = function(o){					
+					var type = o.type;
+					if(type.toLowerCase()=="dommousescroll") type="mousewheel";
+					o.src.attachEvent("on"+type, o.handler);				
+				};
+				methods.remove = function(o){
+					var type = o.type;
+					if(type.toLowerCase()=="dommousescroll") type="mousewheel";
+					o.src.detachEvent("on"+type, o.handler);
+				};
+			}
 			return methods;
 		}(),
 		/**
 		 * @name daum.Event.bindedHandlerRegister
 		 * @field
 		 * @type Array
+		 * @deprecated
 		 */
 		bindedHandlerRegister: [],
 		/**
 		 * @name daum.Event.getBindedHandler
 		 * @function
+		 * @deprecated
 		 * @param Element el
 		 * @param Function fn
 		 * @return {daum.Function.bindAsEventListener}
@@ -700,27 +720,11 @@ daum.extend(daum,{
 		 * @return Object Event Observer
 		 */
 		addEvent : function(el, type, handler, isCapture){
-			var src = daum.$(el), 
-				observer = {"src" : src, "type" : type, "handler" : handler},
-				asserted_index = -1,
-				i;
-			if(!handler.__Binded){
-				handler = daum.Event.getBindedHandler(src, handler);
-				observer.handler = handler;
-			}
-			//for(var i=0,len=daum.Event.observer.length; i<len; i+=1){
-			for(i=daum.Event.observer.length-1; i>=0; i--){
-				if(daum.Event.observer[i].src === observer.src && 
-						daum.Event.observer[i].type === observer.type && 
-						daum.Event.observer[i].handler === observer.handler){
-					asserted_index = i;
-					break;
-				} 
-			}
-			if(asserted_index != -1){return daum.Event.observer[asserted_index];}	  
-			asserted_index = daum.Event.observer.push(observer) - 1;		  
-			daum.Event.crossEvent.add(src, type, handler, isCapture || false);
-			return daum.Event.observer[asserted_index];	   
+			var src = daum.$(el), flag = false, asserted_index = -1, eid = daum.Event.EVENTID++,		
+				observer = {"src" : src, "type" : type, "handler" : handler, "isCapture" : isCapture || false};
+			daum.Event.observer[eid] = observer;
+			daum.Event.crossEvent.add(observer);
+			return eid;
 		},
 		/**
 		 * 특정 DOM 객체 el에 해당 이벤트 type을 listen하는 이벤트 handler를 해제한다.
@@ -736,19 +740,20 @@ daum.extend(daum,{
 		 * @param Boolean [isCapture] 
 		 */		
 		removeEvent : function(el, type, handler, isCapture){
-			var src = daum.$(el), i;
-			if(!handler.__Binded){
-				handler = daum.Event.getBindedHandler(src, handler);
-			}
-			daum.Event.crossEvent.remove(src, type, handler, isCapture || false);
-			for(i=0; i<daum.Event.observer.length; i+=1){
-				if(daum.Event.observer[i].src == src && 
-						daum.Event.observer[i].type == type && 
-						daum.Event.observer[i].handler === handler){
-					daum.Event.observer.splice(i, 1);
-					break;
+			var observer = daum.Event.observer;
+			if(!!el && !type && !handler){
+				daum.Event.crossEvent.remove(observer[el]);
+				delete daum.Event.observer[el];
+			}else{
+				var src = daum.$(el);
+				daum.Event.crossEvent.remove({"src" : src, "type" : type, "handler" : handler, "isCapture" : isCapture || false});
+				for(var p in observer){
+					if(observer[p].src === src && observer[p].type === type && observer[p].handler === handler && observer[p].isCapture === (isCapture || false)){
+						delete daum.Event.observer[p];
+						break;
+					}
 				}
-			}
+			}		
 		},
 		/**
 		 * 특정 observer객체를 전달해서 이벤트를 해제하려 할경우 사용한다.
@@ -762,26 +767,51 @@ daum.extend(daum,{
 		 * @name daum.Event.stopObserving
 		 * @param {EventObserver} observer
 		 */				
-		stopObserving : function(observer){
-			if(observer){daum.Event.removeEvent(observer.src, observer.type, observer.handler);}
+		stopObserving : function(eid){
+			if(daum.Event.observer[eid]) daum.Event.removeEvent(eid);			
+		},
+		/**
+		 * observer가 있는지 여부를 반환한다.
+		 * @function
+		 * @name daum.Event.hasObserver
+		 * @param Element|Number
+		 * @param String type
+		 * @return Boolean 
+		 */
+		hasObserver : function(src, type){
+			if(typeof src === "number"){
+				return !!daum.Event.observer[src];
+			}else{
+				var has = false, observer = daum.Event.observer;
+				for(var p in observer){
+					if(observer[p].src === src && observer[p].type === type){
+						has = true;
+						break;
+					}
+				}
+				return has;
+			}
 		},
 		/**
 		 * 현재 이벤트의 흐름을 중단시킨다.
+		 * daum.Event.stopPropagation과 daum.Event.preventDefault를 동시에 실행하는 것과 같다.
 		 * <pre name="code" class="js:nogutter:nocontrols">
 		 * panel.onclick = daum.Event.stopEvent;
 		 * </pre>
 		 * @function
 		 * @name daum.Event.stopEvent
-		 * @param {Event } e
+		 * @param {Event} e
+		 * @param Boolean 
 		 * @return Boolean false
-		 */				
+		 */
 		stopEvent : function(e){
-			var ev = e || window.event;			 
-			if(ev.stopPropagation){ev.preventDefault();ev.stopPropagation();}
-			else {ev.returnValue = false; ev.cancelBubble = true;}
+			daum.Event.stopPropagation(e);
+			daum.Event.preventDefault(e);
+			return false;
 		},
 		/**
 		 * 브라우저의 기본기능을 현재 이벤트 핸들링 시점에 한해 제한한다.
+		 * 탭이나 백스페이스키 같은 기능을 제한할 수 있다.
 		 * <pre name="code" class="js:nogutter:nocontrols">
 		 * inputbox.onkeydown = daum.Event.preventDefault;
 		 * </pre>
@@ -790,11 +820,28 @@ daum.extend(daum,{
 		 * @param {Event} e
 		 * @return Boolean false
 		 */						
-		preventDefault : function(e){
+		preventDefault: function(e){
 			var ev = e || window.event;
-			ev.returnValue = false;
-			if(ev.preventDefault){ev.preventDefault();}		
+			if(ev.preventDefault){
+				ev.preventDefault();
+			} else {
+				ev.returnValue = false;
+			}
 			return false;		
+		},
+		/**
+		 * 이벤트가 상위의 element로 버블링 되는 것을 막는다.
+		 * @function
+		 * @name daum.Event.stopPropagation
+		 * @param {Event} e
+		 */
+		stopPropagation: function(e){
+			var ev = e || window.event;
+			if(ev.stopPropagation){
+				ev.stopPropagation();
+			} else {
+				ev.cancelBubble = true;	
+			}
 		},
 		/**
 		 * daum.Event 에서 관리하는 observer객체들을 Garbage Collection한다.
@@ -809,35 +856,37 @@ daum.extend(daum,{
 		 * 
 		 */
 		GC : function(){
-			var i, found, element, isBodyElement;
-			for(i=daum.Event.observer.length-1; i>-1; i--){
-				found = false;
-		  		element = daum.Event.observer[i].src;	
-		  		if(daum.Browser.ie){
-		  			if(element && element.ownerDocument){
-		  				try{
-		  					if(!daum.Event.observer[i].src.offsetParent){
-		  						found = true;
-		  					}
-		  				}catch(e){
-		  					found = true;
-		  				}
-		  			}
-		  		}else if(element && element.ownerDocument){
-					if(!daum.Event.observer[i].src.offsetParent){
-						isBodyElement = false;
-						do{
-							if(element == document.body){
-								isBodyElement = true;
-								break;
+			if(daum.Browser.ie){
+				return function(){
+					for(var eid in daum.Event.observer){
+						var e = daum.Event.observer[eid].src;
+						if(e && e["ownerDocument"]){
+			  				try{
+			  					!e["offsetParent"] && daum.Event.stopObserving(eid);		  						
+			  				}catch(e){
+			  					daum.Event.stopObserving(eid);
+			  				}
+			  			}
+					};
+				};
+			}else{
+				return function(){
+					for(var eid in daum.Event.observer){
+						var e = daum.Event.observer[eid].src, isBodyElement = false;
+						if(e && e.ownerDocument){
+							if(!e.offsetParent){							
+								do{
+									if(e === document.body){
+										isBodyElement = true;
+										break;
+									}
+								}while(e = e.parentNode)
+								!isBodyElement && daum.Event.stopObserving(eid);
 							}
-						}while(element = element.parentNode);
-						
-						if(!isBodyElement){found = true;}
-					}
-		  		}	  
-		    	if(found){daum.Event.stopObserving(daum.Event.observer[i]);}	    		
-		   	}
+				  		}
+					};
+				};
+			};		
 		}
 	},
 
@@ -846,13 +895,13 @@ daum.extend(daum,{
 	 * @namespace Function 관련 메소드를 제공한다.
 	 * @name daum.Function
 	 */		
-	Function : {
+	Function: {
 		/**
 		 * Function f내에서 사용하는 this키워드를 지정 Object를 가리키도록 하는 새로운 함수를 반환한다.
 		 * 이때 모든 인자는 반환되는 함수에서도 그대로 사용할 수 있다
 		 * <pre name="code" class="js:nogutter:nocontrols">
 		 * function notice(){ alert(this.name);}
-		 * var member = { name : 'James'}
+		 * var member = { name: 'James'}
 		 * member.getName = daum.Function.bind(notice, member);
 		 * member.getName();
 		 * </pre>
@@ -862,7 +911,7 @@ daum.extend(daum,{
 		 * @param {Object...}
 		 * @return Function
 		 */		
-		bind : function(f){
+		bind: function(f){
 			var method = f, 
 				args = daum.$A(arguments),
 				object, binded; 
@@ -879,7 +928,7 @@ daum.extend(daum,{
 		 * Function f내에서 사용하는 this키워드를 지정 Object를 가리키도록 하는 새로운 함수를 반환한다.
 		 * 이 때 반환된 함수에서 첫번째 인자로 Event 객체를 얻어올 수 있다
 		 * <pre name="code" class="js:nogutter:nocontrols">
-		 * var member = { name : 'James';}
+		 * var member = { name: 'James';}
 		 * function keyInspector(event){
 		 *     alert(this.name ':' event.keyCode);
 		 * }
@@ -890,7 +939,7 @@ daum.extend(daum,{
 		 * @param Function f
 		 * @return Function
 		 */
-		bindAsEventListener : function(f){
+		bindAsEventListener: function(f){
 			var method = f, 
 				args = daum.$A(arguments), object, binded; 
 			args.shift();
@@ -918,8 +967,8 @@ daum.extend(daum,{
 		 * @param Object [object]
 		 * @reutrn Number
 		 */
-		interval : function(f, ms, _object){
-			var func = (_object) ? daum.Function.bind(f, _object) : f;
+		interval: function(f, ms, _object){
+			var func = (_object) ? daum.Function.bind(f, _object): f;
 			return window.setInterval(func, ms);
 		},
 		/**
@@ -938,8 +987,8 @@ daum.extend(daum,{
 		 * @param Object [object]
 		 * @reutrn Number
 		 */	
-		timeout : function(f, ms, _object){
-			var func = (_object) ? daum.Function.bind(f, _object) : f;		
+		timeout: function(f, ms, _object){
+			var func = (_object) ? daum.Function.bind(f, _object): f;		
 			return window.setTimeout(func, ms);
 		}
 	},
@@ -948,19 +997,19 @@ daum.extend(daum,{
 	 * @namespace 시각적 효과와 관련된 메소드를 제공한다. 
 	 * @name daum.Fx 
 	 */
-	Fx : {},
+	Fx: {},
 	/**
 	 * Number형에 관련된 유틸리티 메소드를 제공한다.
 	 * @namespace Number형에 관련된 유틸리티 메소드를 제공한다. 
 	 * @name daum.Number
 	 */			
-	Number : {},
+	Number: {},
 	/**
 	 * Object관련된 유틸리티 메소드를 제공한다.
 	 * @namespace Object관련된 유틸리티 메소드를 제공한다. 
 	 * @name daum.Object
 	 */
-	Object : {
+	Object: {
 		/**
 		 * obj가 Array인지 반환한다.
 		 * <pre name="code" class="js:nogutter:nocontrols">
@@ -972,7 +1021,7 @@ daum.extend(daum,{
 		 * @param Object obj
 		 * @return Boolean 
 		 */
-		isArray : function(obj){
+		isArray: function(obj){
 			return (daum.Object.getType(obj)==='Array');
 		},
 		/**
@@ -1014,7 +1063,7 @@ daum.extend(daum,{
 		 * @param Object obj
 		 * @return Boolean 
 		 */
-		isString : function(obj){
+		isString: function(obj){
 			return (daum.Object.getType(obj)==='String');
 		},
 		/**
@@ -1028,7 +1077,7 @@ daum.extend(daum,{
 		 * @param Object obj
 		 * @return Boolean 
 		 */
-		isNumber : function(obj){
+		isNumber: function(obj){
 			return (daum.Object.getType(obj)==='Number');
 		},
 		/**
@@ -1042,7 +1091,7 @@ daum.extend(daum,{
 		 * @param Object obj
 		 * @return Boolean 
 		 */		
-		isObject : function(obj){
+		isObject: function(obj){
 			return (daum.Object.getType(obj)==='Object');
 		},
 		/**
@@ -1058,7 +1107,7 @@ daum.extend(daum,{
 		 * @param Object obj
 		 * @return String
 		 */		
-		getType : function(obj){
+		getType: function(obj){
 			return Object.prototype.toString.call(obj).toString()
 				.match(/\[object\s(\w*)\]$/)[1];
 		},
@@ -1070,7 +1119,7 @@ daum.extend(daum,{
 		 * @return String
 		 * @see daum.toJSON
 		 */
-		toJSON : function(_obj){
+		toJSON: function(_obj){
 			return daum.toJSON(_obj);
 		}
 	},	
@@ -1079,7 +1128,7 @@ daum.extend(daum,{
 	 * @namespace String에 관련된 유틸리티 메소드를 제공한다. 
 	 * @name daum.String
 	 */				
-	String : {
+	String: {
 		/**
 		 * 현재 string값 s의 좌,우 공백문자를 제거한다.
 		 * <pre name="code" class="js:nogutter:nocontrols">
@@ -1091,9 +1140,9 @@ daum.extend(daum,{
 		 * @function
 		 * @param String s
 		 * @return String
-		 * @see 성능관련 : <a href="http://play.daumcorp.com/x/t8mm">http://play.daumcorp.com/x/t8mm</a>
+		 * @see 성능관련: <a href="http://play.daumcorp.com/x/t8mm">http://play.daumcorp.com/x/t8mm</a>
 		 */
-		trim : function(s){
+		trim: function(s){
 			return s.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 		},
 		/**
@@ -1113,7 +1162,7 @@ daum.extend(daum,{
 		 * @param String new
 		 * @return Number
 		 */		
-		replaceAll : function(/* s, findstr, newstr */){
+		replaceAll: function(/* s, findstr, newstr */){
 			return function(s, findstr, newstr){
 				if(findstr.constructor==RegExp) {
 					return s.replace(new RegExp(findstr.toString()
@@ -1133,7 +1182,7 @@ daum.extend(daum,{
 		 * @param String s
 		 * @return Number
 		 */
-		byteLength : function(s){
+		byteLength: function(s){
 			var _byte = 0, i, val;
 			for(i=0;i<s.length;i+=1){
 				val = escape(s.charAt(i)).length;
@@ -1156,7 +1205,7 @@ daum.extend(daum,{
 		 * @param String [suffix]
 		 * @return String
 		 */
-		cutString : function(s, limit, suff){
+		cutString: function(s, limit, suff){
 			var suffix = suff || "",
 				_limit = limit - suffix.length,
 				_byte = 0,
@@ -1169,7 +1218,7 @@ daum.extend(daum,{
 				_byte++; _limit--;
 			}
 			_str+=suffix;
-			return (limit >= _byte) ? s : _str; 
+			return (limit >= _byte) ? s: _str; 
 		}
 	}, //String Native Extension
 	
@@ -1180,9 +1229,9 @@ daum.extend(daum,{
 	 * @param String||Element
 	 * @return Element
 	 */
-	$ : function(obj){
-		//return (obj) ? ((typeof(obj) == "string") ? document.getElementById(obj) : obj) : null;
-		return typeof obj == 'string' ? document.getElementById(obj) : obj;
+	$: function(obj){
+		//return (obj) ? ((typeof(obj) == "string") ? document.getElementById(obj): obj): null;
+		return typeof obj == 'string' ? document.getElementById(obj): obj;
 	},
 
 	/**
@@ -1198,7 +1247,7 @@ daum.extend(daum,{
 	 * @param Object unarray
 	 * @return Array
 	 */	
-	$A : function(unarray){
+	$A: function(unarray){
 		if(!unarray){return [];}
 		if(unarray instanceof Array){return unarray;}
 		
@@ -1215,6 +1264,8 @@ daum.extend(daum,{
 	 * <pre name="code" class="js:nogutter:nocontrols"> 
 	 * var buttons = daum.$C(panel, "button"); 
 	 * //panel 내부의 button이라는 class를 가짂 모든 객체를 가져온다.
+	 * //아래와 같이 class를 space로 구분하여 여러 개를 and조건으로 가져올 수 있다.
+	 * var imgs = daum.$C(panel, "imageA imageB");
 	 * </pre> 
 	 * @name daum.$C
 	 * @function
@@ -1222,9 +1273,9 @@ daum.extend(daum,{
 	 * @param String _cname class이름
 	 * @return Object nodeList
 	 */
-	$C : function(el, _cname){
+	$C: function(el, _cname){
 		var e = daum.$(el);
-		return (e!==null) ? daum.Element.getElementsByClassName(e, _cname) : null;
+		return (e!==null) ? daum.Element.getElementsByClassName(e, _cname): null;
 	},
 	
 	/**
@@ -1243,7 +1294,7 @@ daum.extend(daum,{
 	 * @param Element||String obj 목적객체
 	 * @return Element 
 	 */
-	$E : function(obj){
+	$E: function(obj){
 		var e = daum.$(obj);
 		if(e){
 			daum.extendMethods(e, daum.Element, false);
@@ -1285,14 +1336,14 @@ daum.extend(daum,{
 	 * @return String||Array
 	 * 
 	 */
-	$F : function(el){
+	$F: function(el){
 		var e = daum.$(el) || document.getElementsByName(el)[0], i, elm, ret;
 		if(!e || (e.tagName !== 'INPUT' && e.tagName !== 'SELECT' && e.tagName !== 'TEXTAREA')){return '';}
 		if(e.type=='radio' || e.type=='checkbox'){
 			for(i=0,elm=document.getElementsByName(e.name),ret=new Array();i<elm.length;i+=1){
 				if(elm[i].checked){ret.push(elm[i].value);}
 			}
-			ret = (e.type=='radio') ? ret[0] : ret;
+			ret = (e.type=='radio') ? ret[0]: ret;
 		} else if(e.type =='select-multiple'){
 			for(i=0,elm=daum.Element.getChildElements(e),ret=new Array();i<elm.length;i+=1){
 				if(elm[i].selected){ret.push(elm[i].value);}
@@ -1304,8 +1355,10 @@ daum.extend(daum,{
 	},
 	/**
 	 * getElementsByTagName의 기능을 축약형으로 사용한다. node는 기준이 되는 HTML객체를 가리킨다. 생략하면 document로 인식한다.
+	 * 퍼포먼스상 이것보다는 daum.$$('div')를 사용하는 것이 좋다.
 	 *  <pre name="code" class="js:nogutter:nocontrols">
 	 *  var atags = daum.$T("a", panel);   // panel이라는 객체 내의 모든 a태그 엘리먼트를 가져온다.
+	 *  var atags2 = daum.$$('#panel a'); // panel이라는 id를 가진 객체 내의 모든 a태그 엘리먼트를 가져온다.
 	 *  </pre> 
 	 * @name daum.$T
 	 * @function
@@ -1314,7 +1367,7 @@ daum.extend(daum,{
 	 * @return Element
 	 */
 	
-	$T : function(tagName,node){
+	$T: function(tagName,node){
 		return (node || document).getElementsByTagName(tagName);
 	},
 	/**
@@ -1328,20 +1381,20 @@ daum.extend(daum,{
 	 * @param Boolean [isHtml]
 	 * @return Element Object|Embed
 	 */
-	activeX : function(/*obj,div, htmltext*/){
+	activeX: function(/*obj,div, htmltext*/){
 		return function(obj, div, isHtml){
 			var t = new Date(), htmltext = isHtml || false,
 				idx = t.getMinutes().toString() + t.getSeconds() + t.getMilliseconds(), 
 				params = obj.param, pname, param_name, useflashvar=false, 
 				src=null, html = '<object ', _panel, activeObject;
 
-			html += 'id="' + ((!obj.id) ? 'daumActiveX'+idx+'" ' : obj.id+'" ');
-			html += 'name="' + ((!obj.name) ? 'daumActiveX'+idx+'" ' : obj.name+'" ');			
-			html += (obj.type) ? 'type="'+obj.type+'" ' : '';
-			html += (obj.classid) ? 'classid="'+obj.classid+'" ' : '';
-			html += (obj.width) ? 'width="'+obj.width+'" ' : '';
-			html += (obj.height) ? 'height="'+obj.height+'" ' : '';
-			html += (obj.codebase) ? 'codebase="'+obj.codebase+'" ' : '';
+			html += 'id="' + ((!obj.id) ? 'daumActiveX'+idx+'" ': obj.id+'" ');
+			html += 'name="' + ((!obj.name) ? 'daumActiveX'+idx+'" ': obj.name+'" ');			
+			html += (obj.type) ? 'type="'+obj.type+'" ': '';
+			html += (obj.classid) ? 'classid="'+obj.classid+'" ': '';
+			html += (obj.width) ? 'width="'+obj.width+'" ': '';
+			html += (obj.height) ? 'height="'+obj.height+'" ': '';
+			html += (obj.codebase) ? 'codebase="'+obj.codebase+'" ': '';
 			html += '>\r\n';
 			for(pname in params){
 				if(params.hasOwnProperty(pname)){ 
@@ -1349,11 +1402,11 @@ daum.extend(daum,{
 				}
 			}
 			html += '<embed ';
-			html += 'id="' + ((!obj.id) ? 'daumActiveX'+idx+'" ' : obj.id+'" ');
-			html += 'name="' + ((!obj.name) ? 'daumActiveX'+idx+'" ' : obj.name+'" ');
-			html += (obj.type) ? 'type="'+obj.type+'" ' : '';
-			html += (obj.width) ? 'width="'+obj.width+'" ' : '';
-			html += (obj.height) ? 'height="'+obj.height+'" ' : '';
+			html += 'id="' + ((!obj.id) ? 'daumActiveX'+idx+'" ': obj.id+'" ');
+			html += 'name="' + ((!obj.name) ? 'daumActiveX'+idx+'" ': obj.name+'" ');
+			html += (obj.type) ? 'type="'+obj.type+'" ': '';
+			html += (obj.width) ? 'width="'+obj.width+'" ': '';
+			html += (obj.height) ? 'height="'+obj.height+'" ': '';
 			for(pname in params){ 
 				if(params.hasOwnProperty(pname)){
 					param_name = pname.toLowerCase();			 
@@ -1364,7 +1417,7 @@ daum.extend(daum,{
 				}
 			}
 			html+=' \/>\r\n<\/object>\r\n';
-			if(!!useflashvar && !!src){html = html.replace('src="'+src+'"', 'src="'+src+ (src.indexOf('?') == -1 ? '?' : '&') +useflashvar+'"');}
+			if(!!useflashvar && !!src){html = html.replace('src="'+src+'"', 'src="'+src+ (src.indexOf('?') == -1 ? '?': '&') +useflashvar+'"');}
 			if(!htmltext){
 				_panel = daum.$(div);
 				if(daum.Browser.ie || obj.type=='application/x-shockwave-flash' || 
@@ -1373,7 +1426,7 @@ daum.extend(daum,{
 					if(!htmltext){_panel.innerHTML = html;}
 				}
 				activeObject = daum.Element.getFirstChild(_panel);
-				return (daum.Browser.ie) ? activeObject : activeObject.getElementsByTagName("embed")[0];
+				return (daum.Browser.ie) ? activeObject: activeObject.getElementsByTagName("embed")[0];
 			}else{
 				return html;
 			}
@@ -1386,7 +1439,7 @@ daum.extend(daum,{
 	 * @private
 	 * @type Boolean
 	 */
-	documentLoaded : false,
+	documentLoaded: false,
 	
 	/**
 	 * source 객체의 멤버함수의 첫번째 인자를 dest의 this로 인식 가능하도록 
@@ -1404,8 +1457,8 @@ daum.extend(daum,{
 	 * @param Boolean [overwrite]	덮어쓰기(default true)
 	 * @return Object
 	 */
-	extendMethods : function(dest, source, overwrite){
-		var ow = overwrite !== undefined ? overwrite : true, p;
+	extendMethods: function(dest, source, overwrite){
+		var ow = overwrite !== undefined ? overwrite: true, p;
 		for(p in source){ 
 			if(!dest[p] || ow){
 				if(typeof(source[p]) == "function"){dest[p] = daum.methodize(source[p]);}
@@ -1426,7 +1479,7 @@ daum.extend(daum,{
 	 * @param Function method 
 	 * @return Function
 	 */	
-	methodize : function(method){
+	methodize: function(method){
 		return function(){
 			return method.apply(null, [this].concat(daum.$A(arguments)));
 		};
@@ -1438,7 +1491,7 @@ daum.extend(daum,{
 	 * @name daum.nativeExtend
 	 * @function
 	 */
-	nativeExtend : function(){
+	nativeExtend: function(){
 		var natives = [[daum.Object, Object],
 		               [daum.String, String.prototype], 
 		               [daum.Number, Number.prototype], 
@@ -1463,7 +1516,7 @@ daum.extend(daum,{
 	 * @param Number max 최대값
 	 * @return Number
 	 */
-	random : function(min, max){
+	random: function(min, max){
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	},
 	
@@ -1478,18 +1531,18 @@ daum.extend(daum,{
 	 * @param String _options 옵션값
 	 * @return String html소스 
 	 */
-	showFlash : function(src, width, height, div, _options){
-		var options = {quality : "high", wmode : "transparent", bgcolor : "#FFFFFF", 
-				pluginspace : "http://www.macromedia.com/go/getflashplayer",
-				allowScriptAccess : "always", allowFullScreen : "true", htmltext : false },
+	showFlash: function(src, width, height, div, _options){
+		var options = {quality: "high", wmode: "transparent", bgcolor: "#FFFFFF", 
+				pluginspace: "http://www.macromedia.com/go/getflashplayer",
+				allowScriptAccess: "always", allowFullScreen: "true", htmltext: false },
 			obj = {
-			"type" : 'application/x-shockwave-flash',
-			"classid" : 'clsid:d27cdb6e-ae6d-11cf-96b8-444553540000',
-			"codebase" : 'http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0',
-			"wmode" : 'transparent',
-			"width" : width,
-			"height" : height,
-			"param" : { "movie" : src, "src" : src }
+			"type": 'application/x-shockwave-flash',
+			"classid": 'clsid:d27cdb6e-ae6d-11cf-96b8-444553540000',
+			"codebase": 'http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0',
+			"wmode": 'transparent',
+			"width": width,
+			"height": height,
+			"param": { "movie": src, "src": src }
 		};
 		daum.extend(options, _options || {});
 		daum.extend(obj.param, options);
@@ -1508,6 +1561,110 @@ daum.extend(daum,{
 })();
 
 daum.extend(daum, {
+
+	/**
+
+	 * 주어진 옵션으로 엘리먼트를 만들어 반환한다.
+
+	 * <pre name="code" class="js:nogutter:nocontrols">
+
+	 * // 사용법 1
+
+	 * var el = daum.createElement('ul',{id:"gogo",style:"border:1px solid red"}); 	 
+
+	 * // 사용법 2 - 태그가 앞뒤로 잘 닫혔는지(well-formed) 확인한다.
+
+	 * var el = daum.createElement('<ul id="gogo" style="border:1px solid red"><li>test1</li><li><test2</li></ul>');
+
+	 * // 위와 같이 만든 후 아래 처럼 삽입할 수 있다.
+
+	 * document.body.appendChild(el);	 
+
+	 * // TR태그는 IE에서 TBODY가 있어야 동적으로 삽입된다는 것을 유의할 것!
+
+	 * </pre>
+
+	 * @name daum.createElement
+
+	 * @function
+
+	 * @param String tagName
+
+	 * @param Object [attributes]
+
+	 * @return Element
+
+	 * @since v1.0_r159
+
+	 */
+
+	createElement: function(cond, attr){
+
+		var tag, opts = '', stack = daum.HTMLStack, ret, tagName, tagSupp, temp;
+
+		if(!attr){
+
+			tag = daum.String.startsWith(cond,'<') ? cond : ('<' + cond + '></' + cond + '>');
+
+		} else {
+
+			for(i in attr){opts += i +'="'+attr[i]+'" ';}
+
+			tag = '<' + cond + ' ' + opts + '></' + cond + '>';
+
+		}
+
+		try{
+
+			stack.innerHTML = tag;
+
+			ret = stack.removeChild(stack.firstChild);
+
+			if(ret.nodeType!==1){
+
+				throw({"message":"shit browser!"});
+
+			} else {
+
+				return ret;
+
+			}
+
+		}catch(e){
+
+			tagName = tag.match(/\w+/).toString().toLowerCase();
+
+			tagSupp = {
+
+				"tbody": ["<table>","</table>"],
+
+				"tr": ["<table><tbody>","</tbody></table>"],
+
+				"td": ["<table><tbody><tr>","</tr></tbody></table>"],
+
+				"option": ["<select>","</select>"]
+
+			};
+
+			if(tagSupp[tagName]){
+
+				stack.innerHTML = tagSupp[tagName][0] + tag + tagSupp[tagName][1];
+
+				temp = stack.removeChild(stack.firstChild);
+
+				return  temp.getElementsByTagName(tagName)[0]; 
+
+				// (tagName==='tr') ? temp.getElementsByTagName(tagName)[0].parentNode : 
+
+			} else {
+
+				return document.createElement(tag);
+
+			}
+
+		}
+
+	},
 
 	/**
 
@@ -1727,7 +1884,7 @@ daum.extend(daum, {
 
 	 */
 
-	useHTMLPrototype : function(){    	
+	useHTMLPrototype : function(){
 
 		/**
 
@@ -1803,8 +1960,6 @@ daum.extend(daum, {
 
 	 * 객체를 JSON String으로 변환하여 반환한다. 
 
-	 * firefox나 safari에서는 native JSON객체를 사용한다.
-
 	 * @name daum.toJSON
 
 	 * @function
@@ -1819,77 +1974,57 @@ daum.extend(daum, {
 
 	toJSON : function(obj){
 
-		var ret, i, prop;
-
-		switch (typeof obj){
-
-			case 'object':
-
-				if(obj){
-
-					ret = [];
-
-					if(obj instanceof Array){
-
-						for(i=0;i<obj.length;i+=1){
-
-							ret.push(daum.toJSON(obj[i]));
-
-						}
-
-						//ret = daum.Array.compact(ret);
-
-						return '[' + ret.join(',').replace(/^,/,'null,').replace(/,,/,',null,').replace(/,$/,',null') + ']';
-
-					} else {
-
-						for(prop in obj){
-
-							if(obj[prop]!==undefined && obj[prop]!==null){
-
-								ret.push('"' + prop + '":' + daum.toJSON(obj[prop]));
-
-							} else if(obj[prop]===null){
-
-								ret.push('"' + prop + '":' + null);
-
-							}
-
-						}
-
-						return '{' + ret.join(',') + '}';
-
-					}
-
-				} else {
-
-					return 'null';
-
-				}
-
-				break;
-
-			case 'string':
-
-				return '"' + obj.replace(/"/g, '\\"') + '"';
-
-			case 'undefined':
-
-				return undefined;
-
-			case 'number':
-
-			case 'boolean':
-
-				return obj.toString();
-
-		 }
+		return JSON.stringify(obj);
 
 	},
 
 	/**
 
 	 * XML도큐먼트를 object로 변환한다.
+
+	 * v1.0_r161 이후 버전부터 attribute에도 접근할 수 있다.
+
+	 * 예제 :
+
+	 * <pre name="code" class="js:nogutter:nocontrols">
+
+	 * &lt;results&gt;
+
+	 *   &lt;application&gt;
+
+	 *       &lt;user_id&gt;vcG1&lt;/user_id&gt;
+
+	 *       &lt;daum_id id="THIS_IS_ID" class="THIS_IS_CLASS"&gt;eighty80&lt;/daum_id&gt;
+
+	 *       &lt;daum_name class="qwerty"&gt;toward43&lt;/daum_name&gt;
+
+	 *       &lt;date&gt;2009-07-02 16:06:17.0 KST&lt;/date&gt;
+
+	 *   &lt;/application&gt;
+
+	 * &lt;/results&gt;
+
+	 * 
+
+	 * // xmlDoc 정의 
+
+	 * xmlDoc = r.responseXML; // ajax로 받아온 xml
+
+	 * x = daum.xmlToObject(xmlDoc); 
+
+	 * alert(x.application.daum_id); // 'eighty80'
+
+	 * alert(x.application['date']); // '2009-07-02 16:06:17.0 KST'
+
+	 * alert(x.application['daum_id@id']); // 'THIS_IS_ID'
+
+	 * alert(x.application['daum_id@class']); // 'THIS_IS_CLASS'
+
+	 * alert(x.application['daum_id@query']); // undefined
+
+	 * </pre>
+
+	 * 
 
 	 * @name daum.xmlToObject
 
@@ -1909,7 +2044,7 @@ daum.extend(daum, {
 
 			var obj = {}, cNodes = daum.getChildElements(node), name, value;
 
-			for(var i=0,loop=cNodes.length; i<loop; i+=1){
+			for(var i=0;i<cNodes.length;i+=1){
 
 				name = cNodes[i].nodeName;
 
@@ -1931,6 +2066,12 @@ daum.extend(daum, {
 
 				}
 
+				for(var j=0;j<cNodes[i].attributes.length;j+=1){
+
+					obj[name + '@' + cNodes[i].attributes[j].nodeName] = (cNodes[i].attributes[j].nodeValue||"").toString();
+
+				}
+
 			}
 
 			return obj;
@@ -1947,6 +2088,18 @@ daum.extend(daum, {
 
 	 * firefox나 safari에서는 native JSON객체를 사용한다.
 
+	 * <pre name="code" class="js:nogutter:nocontrols">
+
+	 * // 내부에 double quotation이 있을때에는 \\를 사용
+
+	 * var str = '{"title":"\\"따옴표\\""}';
+
+	 * var obj = daum.jsonToObject( str );
+
+	 * alert(obj.title); // "따옴표"
+
+	 * </pre>
+
 	 * @name daum.jsonToObject
 
 	 * @function
@@ -1957,7 +2110,11 @@ daum.extend(daum, {
 
 	 */	
 
-	jsonToObject : function(){if(typeof JSON === 'object'){return function(a){return JSON.parse(a);};};var r="(?:-?\\b(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b)",k='(?:[^\\0-\\x08\\x0a-\\x1f"\\\\]|\\\\(?:["/\\\\bfnrt]|u[0-9A-Fa-f]{4}))';k='(?:"'+k+'*")';var s=new RegExp("(?:false|true|null|[\\{\\}\\[\\]]|"+r+"|"+k+")","g"),t=new RegExp("\\\\(?:([^u])|u(.{4}))","g"),u={'"':'"',"/":"/","\\":"\\",b:"\u0008",f:"\u000c",n:"\n",r:"\r",t:"\t"};function v(h,j,e){return j?u[j]:String.fromCharCode(parseInt(e,16))}var w=new String(""),x=Object.hasOwnProperty;return function(h,j){h=h.match(s);var e,c=h[0],l=false;if("{"===c)e={};else if("["===c)e=[];else{e=[];l=true}for(var b,d=[e],m=1-l,y=h.length;m<y;++m){c=h[m];var a;switch(c.charCodeAt(0)){default:a=d[0];a[b||a.length]=+c;b=void 0;break;case 34:c=c.substring(1,c.length-1);if(c.indexOf("\\")!==-1)c=c.replace(t,v);a=d[0];if(!b)if(a instanceof Array)b=a.length;else{b=c||w;break}a[b]=c;b=void 0;break;case 91:a=d[0];d.unshift(a[b||a.length]=[]);b=void 0;break;case 93:d.shift();break;case 102:a=d[0];a[b||a.length]=false;b=void 0;break;case 110:a=d[0];a[b||a.length]=null;b=void 0;break;case 116:a=d[0];a[b||a.length]=true;b=void 0;break;case 123:a=d[0];d.unshift(a[b||a.length]={});b=void 0;break;case 125:d.shift();break}}if(l){if(d.length!==1)throw new Error;e=e[0]}else if(d.length)throw new Error;if(j){var p=function(n,o){var f=n[o];if(f&&typeof f==="object"){var i=null;for(var g in f)if(x.call(f,g)&&f!==n){var q=p(f,g);if(q!==void 0)f[g]=q;else{i||(i=[]);i.push(g)}}if(i)for(g=i.length;--g>=0;)delete f[i[g]]}return j.call(n,o,f)};e=p({"":e},"")}return e}}()
+	jsonToObject : function(jsonStr){
+
+		return JSON.parse(jsonStr);
+
+	}
 
 });
 daum.extend(daum.Array,{
@@ -2106,29 +2263,99 @@ daum.extend(daum.Array,{
 
 	},
 
+
+
+//	/**
+
+//	 * 객체의 속성/메소드를 JSON형태의 문자열로 반환한다.
+
+//	 * <b>이 메소드는 deprecated입니다.</b>
+
+//	 * <b>daum.toJSON 혹은 JSON.stringify를 사용하세요.</b>
+
+//	 * @name daum.Array.toJSON
+
+//	 * @function
+
+//	 * @deprecated daum.toJSON을 사용하세요.
+
+//	 * @param Array a
+
+//	 * @return String json
+
+//	 * @see daum.toJSON
+
+//	 */
+
+//	toJSON : function(obj){
+
+//		var ret, i, prop;
+
+//		switch (typeof obj){
+
+//			case 'object':
+
+//				if(obj){
+
+//					ret = [];
+
+//					if(obj instanceof Array){
+
+//						for(i=0;i<obj.length;i+=1){
+
+//							ret.push(daum.Array.toJSON(obj[i],true));
+
+//						}
+
+//						return '[' + ret.join(',').replace(/^,/,'null,').replace(/,,/,',null,').replace(/,$/,',null') + ']';
+
+//					} else {
+
+//						for(prop in obj){
+
+//							if(obj[prop]!==undefined && obj[prop]!==null){
+
+//								ret.push('"' + prop + '":' + daum.Array.toJSON(obj[prop],true));
+
+//							} else if(obj[prop]===null){
+
+//								ret.push('"' + prop + '":' + null);
+
+//							}
+
+//						}
+
+//						return '{' + ret.join(',') + '}';
+
+//					}
+
+//				} else {
+
+//					return 'null';
+
+//				}
+
+//				break;
+
+//			case 'string':
+
+//				return '"' + obj.replace(/"/g, '\\"') + '"';
+
+//			case 'undefined':
+
+//				return undefined;
+
+//			case 'number':
+
+//			case 'boolean':
+
+//				return obj.toString();
+
+//		 }
+
+//	},
+
 	
-
-	/**
-
-	 * 객체의 속성/메소드를 JSON형태의 문자열로 반환한다.
-
-	 * @name daum.Array.toJSON
-
-	 * @function
-
-	 * @param Array a
-
-	 * @return String json
-
-	 * @see daum.toJSON
-
-	 */
-
-	toJSON : function(a){
-
-		return daum.toJSON(a);
-
-	},
 
 	/**
 
@@ -2597,97 +2824,45 @@ daum.extend(daum.Function,{
 
 	 */		
 
-	inherit : function(f, _parent_, /*optional*/_members){
+	inherit : function (f, parent, /*optional*/ members){
 
-		if(typeof _parent_ !== "function"){return f;}
+		var s  = function(){}, c;
 
-		var superclass = function(){return true;},
+	
 
-			constructorStr,
+		s.prototype = parent.prototype;
 
-			parameter, body, callSuperIdx, aboveCode, belowCode, func;
+		f.prototype = new s(), f.prototype.constructor = f;
 
-		superclass.prototype = _parent_.prototype;
+		
 
-		f.prototype = new superclass();
+		f.prototype.parent = (parent.prototype.parent || []).concat(parent);
 
-		f.prototype.constructor = f;
+		f._parent = parent;
 
-		f._parent = _parent_;
+		c = f.prototype.parent.length;
 
-		constructorStr = _parent_.toString();
 
-		if(constructorStr.search(/\$super/) > -1){
 
-			parameter = constructorStr.match(/function\s*\((.+?)\)/);
+		f.prototype.$super = function(){
 
-			body = constructorStr.replace(/(^function.+?\{|\}$)/g,'');
+			this.constructor.prototype.parent[--c].apply(this, arguments);
 
-			callSuperIdx = body.search(/this\.\$super/);
+			c = c==0?this.constructor.prototype.parent.length:c;
 
-			aboveCode = body.substr(0,callSuperIdx).trim();
+		};
 
-			
+		
 
-			belowCode = body.match(/this\.\$super[\s]*\([\"|\']?\w*[\"|\']?\);?/);
+		if(members){ daum.Function.members(f, members); }
 
-			
+		
 
-			if(belowCode){
+		return f;
 
-				belowCode = body.substring(callSuperIdx + belowCode[0].length).trim();
+	},
 
-			}
 
-			
-
-			parameter = (parameter && parameter.length > 1) ? parameter[1].split(',') : parameter = [];
-
-			
-
-			/** @ignore */
-
-			f.prototype.$super = function(){
-
-				if(aboveCode){
-
-					func = daum.createFunction(parameter, aboveCode);
-
-					func.apply(this,arguments);
-
-				}
-
-				_parent_.prototype.$super.apply(this,arguments);
-
-				if(belowCode){
-
-					func = daum.createFunction(parameter, belowCode);
-
-					func.apply(this,arguments);
-
-				}
-
-			};
-
-		}else{
-
-			f.prototype.$super = function(){
-
-				return _parent_.apply(this, arguments);				
-
-			};
-
-		}
-
-		if(_members){
-
-			daum.Function.members(f, _members);
-
-		}
-
-		return f;	
-
-	},	
 
 	/**
 
@@ -3514,17 +3689,23 @@ daum.extend(daum.Element,{
 
 	destroy : function(el){
 
-		var e = daum.$(el);
+		var gbId = '__daumGB', garbageBin = daum.$(gbId), elem = daum.$(el);
 
-		if(daum.HTMLPrototype){
+		if(elem.id === gbId){return;}
 
-			daum.HTMLPrototype.appendChild(e);
+	    if (!garbageBin) {
 
-			daum.HTMLPrototype.innerHTML = ""; 
+	    	garbageBin = daum.createElement('div',{"id":gbId,"style":"display:none;"});
 
-			delete e; 
+	        document.body.appendChild(garbageBin);
 
-		}
+	    }
+
+	    garbageBin.appendChild(elem);
+
+	    garbageBin.innerHTML = '';
+
+	    elem = null;
 
 	}
 
@@ -4062,7 +4243,7 @@ daum.extend(daum.String,{
 
 		var suff = suffix || "",
 
-			suffLen, _str, i;		
+			suffLen, _str, i;
 
 		document.body.appendChild(daum.HTMLPrototype);			
 
@@ -4270,16 +4451,16 @@ daum.extend(daum.String,{
  * <pre name="code" class="js:nogutter:nocontrols">
  * // option Default
  * this.options = {
- * 	url : "test.xml", // 호출할 url
- * 	method : "GET", // method : get or post
- * 	async : true, // asynchronous
- * 	timeout : 5000,
- * 	paramString : "", //  파라미터로 넘겨줄 변수 ex)name=test&age=20 
- * 	encoding : "utf-8",
- * 	onsuccess : function(){}, // 성공일때 실행될 함수
- * 	onfailure : function(){}, // 실패일때 실행될 함수
- * 	onloading : function(){}, // 로딩중일때 실행될 함수
- * 	ontimeout : function(){} // 타임아웃일때 실행될 함수
+ * 	url: "test.xml", // 호출할 url
+ * 	method: "GET", // method: get or post
+ * 	async: true, // asynchronous
+ * 	timeout: 5000,
+ * 	paramString: "", //  파라미터로 넘겨줄 변수 ex)name=test&age=20 
+ * 	encoding: "utf-8",
+ * 	onsuccess: function(){}, // 성공일때 실행될 함수
+ * 	onfailure: function(){}, // 실패일때 실행될 함수
+ * 	onloading: function(){}, // 로딩중일때 실행될 함수
+ * 	ontimeout: function(){} // 타임아웃일때 실행될 함수
  * }
  * 
  * // 사용법
@@ -4301,17 +4482,18 @@ daum.extend(daum.String,{
  */
 daum.Ajax = function(_options){
 	this.options = {
-		url : '',
-		method : 'get',
-		async : true,
-		timeout : 5000,
-		paramString : '',
-		encoding : 'utf-8',
-		onsuccess : function(){},
-		//onfailure : function(r){alert('error : ' + r.status + ' ' + r.statusText);},
-		onfailure : function(){},
-		onloading : function(){},
-		ontimeout : function(){}
+		url: '',
+		method: 'get',
+		async: true,
+		timeout: 5000,
+		paramString: '',
+		encoding: 'utf-8',
+		onsuccess: function(){},
+		//onfailure: function(r){alert('error: ' + r.status + ' ' + r.statusText);},
+		onfailure: function(){},
+		onloading: function(){},
+		ontimeout: function(){},
+		headers: {}
 	}
 	daum.extend(this.options, _options || {});
 	this.init();
@@ -4324,7 +4506,7 @@ daum.Ajax.prototype = {
 	 * @private
 	 * @return
 	 */
-	init : function(){
+	init: function(){
 		if(window.XMLHttpRequest){
 			this.XHR = new XMLHttpRequest();
 		}else if(window.ActiveXObject){	
@@ -4338,7 +4520,7 @@ daum.Ajax.prototype = {
 				}
 			}
 		}		
-		if(!this.XHR){return false};
+		if(!this.XHR){return false;};
 	},
 	/**
 	 * url로 request를 보낸다.
@@ -4348,7 +4530,7 @@ daum.Ajax.prototype = {
 	 * @param Object options 옵션
 	 * @return
 	 */
-	request : function(url1, options){
+	request: function(url1, options){
 		this.setOptions(options);
 		var url = url1 || this.options.url;
 		if(this.options.paramString.length > 0 && this.options.method=='get'){
@@ -4363,14 +4545,14 @@ daum.Ajax.prototype = {
 	 * @param String url
 	 * @return
 	 */
-	open : function(url){
+	open: function(url){
 		if(this.options.async){this.XHR.onreadystatechange = 
 			daum.Function.bindAsEventListener(this.stateHandle, this);}
 		this.options.timer = daum.Function.timeout(this.abort, this.options.timeout, this);
 		this.XHR.open(this.options.method, url, this.options.async);
-		this.XHR.setRequestHeader("charset", this.options.encoding);
-		if(this.options.method=='post'){
-			this.XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		var headers = this.options.headers;
+		for(var v in headers){
+			this.XHR.setRequestHeader(v,headers[v]);
 		}
 		this.XHR.send(this.options.paramString);
 		if(!this.options.async) this.stateHandle();
@@ -4382,7 +4564,7 @@ daum.Ajax.prototype = {
 	 * @private
 	 * @return
 	 */
-	abort : function(){
+	abort: function(){
 		if(this.XHR){
 			this.XHR.abort();
 			this.callTimeout();
@@ -4395,7 +4577,7 @@ daum.Ajax.prototype = {
 	 * @param e
 	 * @return
 	 */
-	stateHandle : function(e){
+	stateHandle: function(e){
 		switch(this.XHR.readyState){
 			case 4:
 				window.clearTimeout(this.options.timer);
@@ -4418,7 +4600,7 @@ daum.Ajax.prototype = {
 	 * @private
 	 * @return
 	 */
-	callSuccess : function(){
+	callSuccess: function(){
 		this.options.onsuccess(this.XHR);		
 	},
 	/**
@@ -4427,7 +4609,7 @@ daum.Ajax.prototype = {
 	 * @private
 	 * @return
 	 */
-	callFailure : function(){
+	callFailure: function(){
 		this.options.onfailure(this.XHR);		
 	},
 	/**
@@ -4436,7 +4618,7 @@ daum.Ajax.prototype = {
 	 * @private
 	 * @return
 	 */	
-	callLoading : function(){
+	callLoading: function(){
 		this.options.onloading(this.XHR);		
 	},
 	/**
@@ -4445,7 +4627,7 @@ daum.Ajax.prototype = {
 	 * @private
 	 * @return
 	 */	
-	callTimeout : function(){
+	callTimeout: function(){
 		this.options.ontimeout(this.XHR);
 	},
 	/**
@@ -4455,9 +4637,55 @@ daum.Ajax.prototype = {
 	 * @param Object options
 	 * @return
 	 */	
-	setOptions : function(options){
+	setOptions: function(options){
 		daum.extend(this.options, options || {});
 		this.options.method = this.options.method.toLowerCase();
+		// header 정의
+		this.setHeader('charset',this.options.encoding);
+		if(this.options.method=='post'){
+			this.setHeader('Content-Type', 'application/x-www-form-urlencoded');
+		}
+	},
+	/**
+	 * request의 header를 정의한다. 
+	 * 값은 {x:'y',z:'a'}처럼 object하나만 던질 수도 있고, 각각 string으로 던질 수도 있다.
+	 * <pre name="code" class="js:nogutter:nocontrols">	 
+	 * c = new daum.Ajax('/test.html',method:'post',headers:{key1:'val1',key2:'val2'});
+	 * c.request();
+	 * // 혹은 아래와 같이 할 수 있다.
+	 * c = new daum.Ajax('/test.html',method:'post');
+	 * c.setHeader({key1:'val1',key2:'val2'});
+	 * c.request();	 
+	 * // 또한 아래처럼 할 수 있다.
+	 * c = new daum.Ajax('/test.html',method:'post');
+	 * c.setHeader('key1','val1').setHeader('key2','val2');
+	 * c.request();	 
+	 * </pre>	 
+	 * @name daum.Ajax.setHeader
+	 * @function
+	 * @param Object|String key or object
+	 * @param String value 
+	 * @return
+	 */	
+	setHeader: function(key, value){
+		if(typeof key === 'object'){
+			// header를 셋팅하고 이것을 open시에 첨가한다.
+			daum.extend(this.options.headers, key || {}, true);
+		} else {
+			this.options.headers[key] = value;
+		}
+		return this;
+	},
+	/**
+	 * response의 header값을 읽어온다.
+	 * 이 값은 당연히 response를 받았을때 출력된다.
+	 * @name daum.Ajax.getHeader
+	 * @function
+	 * @param String key
+	 * @return
+	 */		
+	getHeader: function(key){
+		return this.XHR.getResponseHeader(key);
 	}
 };
 /**
@@ -4593,15 +4821,9 @@ daum.Template.prototype = {
 
 	toElement : function(data){
 
-		daum.HTMLPrototype.innerHTML = this.evaluate(data);
+		return daum.createElement(this.evaluate(data));
 
-		var element = daum.Element.getFirstChild(daum.HTMLPrototype);
-
-		daum.HTMLStack.appendChild(element);
-
-		return element;
-
-	}
+	}	
 
 };
 /*!
@@ -5608,19 +5830,511 @@ var posProcess = function(selector, context){
 window.Sizzle = Sizzle;
 
 })();
+/*
+
+	이 파일은 수정되었습니다. 원본 파일은 json2.js.bak 입니다.
+	브라우저간 문제 때문에 성능을 포기하고 Native JSON객체를 사용하지 못하게 하였습니다.
+	http://ftdev.daum.net/ezhong/temp/ss.html
+	
+    http://www.JSON.org/json2.js
+    2010-03-20
+
+    Public Domain.
+
+    NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+
+    See http://www.JSON.org/js.html
+
+
+    This code should be minified before deployment.
+    See http://javascript.crockford.com/jsmin.html
+
+    USE YOUR OWN COPY. IT IS EXTREMELY UNWISE TO LOAD CODE FROM SERVERS YOU DO
+    NOT CONTROL.
+
+
+    This file creates a global JSON object containing two methods: stringify
+    and parse.
+
+        JSON.stringify(value, replacer, space)
+            value       any JavaScript value, usually an object or array.
+
+            replacer    an optional parameter that determines how object
+                        values are stringified for objects. It can be a
+                        function or an array of strings.
+
+            space       an optional parameter that specifies the indentation
+                        of nested structures. If it is omitted, the text will
+                        be packed without extra whitespace. If it is a number,
+                        it will specify the number of spaces to indent at each
+                        level. If it is a string (such as '\t' or '&nbsp;'),
+                        it contains the characters used to indent at each level.
+
+            This method produces a JSON text from a JavaScript value.
+
+            When an object value is found, if the object contains a toJSON
+            method, its toJSON method will be called and the result will be
+            stringified. A toJSON method does not serialize: it returns the
+            value represented by the name/value pair that should be serialized,
+            or undefined if nothing should be serialized. The toJSON method
+            will be passed the key associated with the value, and this will be
+            bound to the value
+
+            For example, this would serialize Dates as ISO strings.
+
+                Date.prototype.toJSON = function (key) {
+                    function f(n) {
+                        // Format integers to have at least two digits.
+                        return n < 10 ? '0' + n : n;
+                    }
+
+                    return this.getUTCFullYear()   + '-' +
+                         f(this.getUTCMonth() + 1) + '-' +
+                         f(this.getUTCDate())      + 'T' +
+                         f(this.getUTCHours())     + ':' +
+                         f(this.getUTCMinutes())   + ':' +
+                         f(this.getUTCSeconds())   + 'Z';
+                };
+
+            You can provide an optional replacer method. It will be passed the
+            key and value of each member, with this bound to the containing
+            object. The value that is returned from your method will be
+            serialized. If your method returns undefined, then the member will
+            be excluded from the serialization.
+
+            If the replacer parameter is an array of strings, then it will be
+            used to select the members to be serialized. It filters the results
+            such that only members with keys listed in the replacer array are
+            stringified.
+
+            Values that do not have JSON representations, such as undefined or
+            functions, will not be serialized. Such values in objects will be
+            dropped; in arrays they will be replaced with null. You can use
+            a replacer function to replace those with JSON values.
+            JSON.stringify(undefined) returns undefined.
+
+            The optional space parameter produces a stringification of the
+            value that is filled with line breaks and indentation to make it
+            easier to read.
+
+            If the space parameter is a non-empty string, then that string will
+            be used for indentation. If the space parameter is a number, then
+            the indentation will be that many spaces.
+
+            Example:
+
+            text = JSON.stringify(['e', {pluribus: 'unum'}]);
+            // text is '["e",{"pluribus":"unum"}]'
+
+
+            text = JSON.stringify(['e', {pluribus: 'unum'}], null, '\t');
+            // text is '[\n\t"e",\n\t{\n\t\t"pluribus": "unum"\n\t}\n]'
+
+            text = JSON.stringify([new Date()], function (key, value) {
+                return this[key] instanceof Date ?
+                    'Date(' + this[key] + ')' : value;
+            });
+            // text is '["Date(---current time---)"]'
+
+
+        JSON.parse(text, reviver)
+            This method parses a JSON text to produce an object or array.
+            It can throw a SyntaxError exception.
+
+            The optional reviver parameter is a function that can filter and
+            transform the results. It receives each of the keys and values,
+            and its return value is used instead of the original value.
+            If it returns what it received, then the structure is not modified.
+            If it returns undefined then the member is deleted.
+
+            Example:
+
+            // Parse the text. Values that look like ISO date strings will
+            // be converted to Date objects.
+
+            myData = JSON.parse(text, function (key, value) {
+                var a;
+                if (typeof value === 'string') {
+                    a =
+/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)Z$/.exec(value);
+                    if (a) {
+                        return new Date(Date.UTC(+a[1], +a[2] - 1, +a[3], +a[4],
+                            +a[5], +a[6]));
+                    }
+                }
+                return value;
+            });
+
+            myData = JSON.parse('["Date(09/09/2001)"]', function (key, value) {
+                var d;
+                if (typeof value === 'string' &&
+                        value.slice(0, 5) === 'Date(' &&
+                        value.slice(-1) === ')') {
+                    d = new Date(value.slice(5, -1));
+                    if (d) {
+                        return d;
+                    }
+                }
+                return value;
+            });
+
+
+    This is a reference implementation. You are free to copy, modify, or
+    redistribute.
+*/
+
+/*jslint evil: true, strict: false */
+
+/*members "", "\b", "\t", "\n", "\f", "\r", "\"", JSON, "\\", apply,
+    call, charCodeAt, getUTCDate, getUTCFullYear, getUTCHours,
+    getUTCMinutes, getUTCMonth, getUTCSeconds, hasOwnProperty, join,
+    lastIndex, length, parse, prototype, push, replace, slice, stringify,
+    test, toJSON, toString, valueOf
+*/
+
+
+// Create a JSON object only if one does not already exist. We create the
+// methods in a closure to avoid creating global variables.
+
+
+// Disable Native JSON Object 
+if(!daum.Browser.webkit){JSON=undefined;}
+
+if (!this.JSON) {
+    this.JSON = {};
+    //console.log('use json2');
+}
+
+(function () {
+
+    function f(n) {
+        // Format integers to have at least two digits.
+        return n < 10 ? '0' + n : n;
+    }
+
+    if (typeof Date.prototype.toJSON !== 'function') {
+
+        Date.prototype.toJSON = function (key) {
+
+            return isFinite(this.valueOf()) ?
+                   this.getUTCFullYear()   + '-' +
+                 f(this.getUTCMonth() + 1) + '-' +
+                 f(this.getUTCDate())      + 'T' +
+                 f(this.getUTCHours())     + ':' +
+                 f(this.getUTCMinutes())   + ':' +
+                 f(this.getUTCSeconds())   + 'Z' : null;
+        };
+
+        String.prototype.toJSON =
+        Number.prototype.toJSON =
+        Boolean.prototype.toJSON = function (key) {
+            return this.valueOf();
+        };
+    }
+
+    var cx = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
+        escapable = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
+        gap,
+        indent,
+        meta = {    // table of character substitutions
+            '\b': '\\b',
+            '\t': '\\t',
+            '\n': '\\n',
+            '\f': '\\f',
+            '\r': '\\r',
+            '"' : '\\"',
+            '\\': '\\\\'
+        },
+        rep;
+
+
+    function quote(string) {
+
+// If the string contains no control characters, no quote characters, and no
+// backslash characters, then we can safely slap some quotes around it.
+// Otherwise we must also replace the offending characters with safe escape
+// sequences.
+
+        escapable.lastIndex = 0;
+        return escapable.test(string) ?
+            '"' + string.replace(escapable, function (a) {
+                var c = meta[a];
+                return typeof c === 'string' ? c :
+                    '\\u' + ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
+            }) + '"' :
+            '"' + string + '"';
+    }
+
+
+    function str(key, holder) {
+
+// Produce a string from holder[key].
+
+        var i,          // The loop counter.
+            k,          // The member key.
+            v,          // The member value.
+            length,
+            mind = gap,
+            partial,
+            value = holder[key];
+
+// If the value has a toJSON method, call it to obtain a replacement value.
+
+        if (value && typeof value === 'object' &&
+                typeof value.toJSON === 'function') {
+            value = value.toJSON(key);
+        }
+
+// If we were called with a replacer function, then call the replacer to
+// obtain a replacement value.
+
+        if (typeof rep === 'function') {
+            value = rep.call(holder, key, value);
+        }
+
+// What happens next depends on the value's type.
+
+        switch (typeof value) {
+        case 'string':
+            return quote(value);
+
+        case 'number':
+
+// JSON numbers must be finite. Encode non-finite numbers as null.
+
+            return isFinite(value) ? String(value) : 'null';
+
+        case 'boolean':
+        case 'null':
+
+// If the value is a boolean or null, convert it to a string. Note:
+// typeof null does not produce 'null'. The case is included here in
+// the remote chance that this gets fixed someday.
+
+            return String(value);
+
+// If the type is 'object', we might be dealing with an object or an array or
+// null.
+
+        case 'object':
+
+// Due to a specification blunder in ECMAScript, typeof null is 'object',
+// so watch out for that case.
+
+            if (!value) {
+                return 'null';
+            }
+
+// Make an array to hold the partial results of stringifying this object value.
+
+            gap += indent;
+            partial = [];
+
+// Is the value an array?
+
+            if (Object.prototype.toString.apply(value) === '[object Array]') {
+
+// The value is an array. Stringify every element. Use null as a placeholder
+// for non-JSON values.
+
+                length = value.length;
+                for (i = 0; i < length; i += 1) {
+                    partial[i] = str(i, value) || 'null';
+                }
+
+// Join all of the elements together, separated with commas, and wrap them in
+// brackets.
+
+                v = partial.length === 0 ? '[]' :
+                    gap ? '[\n' + gap +
+                            partial.join(',\n' + gap) + '\n' +
+                                mind + ']' :
+                          '[' + partial.join(',') + ']';
+                gap = mind;
+                return v;
+            }
+
+// If the replacer is an array, use it to select the members to be stringified.
+
+            if (rep && typeof rep === 'object') {
+                length = rep.length;
+                for (i = 0; i < length; i += 1) {
+                    k = rep[i];
+                    if (typeof k === 'string') {
+                        v = str(k, value);
+                        if (v) {
+                            partial.push(quote(k) + (gap ? ': ' : ':') + v);
+                        }
+                    }
+                }
+            } else {
+
+// Otherwise, iterate through all of the keys in the object.
+
+                for (k in value) {
+                    if (Object.hasOwnProperty.call(value, k)) {
+                        v = str(k, value);
+                        if (v) {
+                            partial.push(quote(k) + (gap ? ': ' : ':') + v);
+                        }
+                    }
+                }
+            }
+
+// Join all of the member texts together, separated with commas,
+// and wrap them in braces.
+
+            v = partial.length === 0 ? '{}' :
+                gap ? '{\n' + gap + partial.join(',\n' + gap) + '\n' +
+                        mind + '}' : '{' + partial.join(',') + '}';
+            gap = mind;
+            return v;
+        }
+    }
+
+// If the JSON object does not yet have a stringify method, give it one.
+
+    if (typeof JSON.stringify !== 'function') {
+        JSON.stringify = function (value, replacer, space) {
+
+// The stringify method takes a value and an optional replacer, and an optional
+// space parameter, and returns a JSON text. The replacer can be a function
+// that can replace values, or an array of strings that will select the keys.
+// A default replacer method can be provided. Use of the space parameter can
+// produce text that is more easily readable.
+
+            var i;
+            gap = '';
+            indent = '';
+
+// If the space parameter is a number, make an indent string containing that
+// many spaces.
+
+            if (typeof space === 'number') {
+                for (i = 0; i < space; i += 1) {
+                    indent += ' ';
+                }
+
+// If the space parameter is a string, it will be used as the indent string.
+
+            } else if (typeof space === 'string') {
+                indent = space;
+            }
+
+// If there is a replacer, it must be a function or an array.
+// Otherwise, throw an error.
+
+            rep = replacer;
+            if (replacer && typeof replacer !== 'function' &&
+                    (typeof replacer !== 'object' ||
+                     typeof replacer.length !== 'number')) {
+                throw new Error('JSON.stringify');
+            }
+
+// Make a fake root object containing our value under the key of ''.
+// Return the result of stringifying the value.
+
+            return str('', {'': value});
+        };
+    }
+
+
+// If the JSON object does not yet have a parse method, give it one.
+
+    if (typeof JSON.parse !== 'function') {
+        JSON.parse = function (text, reviver) {
+
+// The parse method takes a text and an optional reviver function, and returns
+// a JavaScript value if the text is a valid JSON text.
+
+            var j;
+
+            function walk(holder, key) {
+
+// The walk method is used to recursively walk the resulting structure so
+// that modifications can be made.
+
+                var k, v, value = holder[key];
+                if (value && typeof value === 'object') {
+                    for (k in value) {
+                        if (Object.hasOwnProperty.call(value, k)) {
+                            v = walk(value, k);
+                            if (v !== undefined) {
+                                value[k] = v;
+                            } else {
+                                delete value[k];
+                            }
+                        }
+                    }
+                }
+                return reviver.call(holder, key, value);
+            }
+
+
+// Parsing happens in four stages. In the first stage, we replace certain
+// Unicode characters with escape sequences. JavaScript handles many characters
+// incorrectly, either silently deleting them, or treating them as line endings.
+
+            text = String(text);
+            cx.lastIndex = 0;
+            if (cx.test(text)) {
+                text = text.replace(cx, function (a) {
+                    return '\\u' +
+                        ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
+                });
+            }
+
+// In the second stage, we run the text against regular expressions that look
+// for non-JSON patterns. We are especially concerned with '()' and 'new'
+// because they can cause invocation, and '=' because it can cause mutation.
+// But just to be safe, we want to reject all unexpected forms.
+
+// We split the second stage into 4 regexp operations in order to work around
+// crippling inefficiencies in IE's and Safari's regexp engines. First we
+// replace the JSON backslash pairs with '@' (a non-JSON character). Second, we
+// replace all simple value tokens with ']' characters. Third, we delete all
+// open brackets that follow a colon or comma or that begin the text. Finally,
+// we look to see that the remaining characters are only whitespace or ']' or
+// ',' or ':' or '{' or '}'. If that is so, then the text is safe for eval.
+
+            if (/^[\],:{}\s]*$/.
+test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@').
+replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+
+// In the third stage we use the eval function to compile the text into a
+// JavaScript structure. The '{' operator is subject to a syntactic ambiguity
+// in JavaScript: it can begin a block or an object literal. We wrap the text
+// in parens to eliminate the ambiguity.
+
+                j = eval('(' + text + ')');
+
+// In the optional fourth stage, we recursively walk the new structure, passing
+// each name/value pair to a reviver function for possible transformation.
+
+                return typeof reviver === 'function' ?
+                    walk({'': j}, '') : j;
+            }
+
+// If the text is not JSON parseable, then a SyntaxError is thrown.
+
+            throw new SyntaxError('JSON.parse');
+        };
+    }
+}());
 
 
 /*!
  * Jigu Initialization
  *  more information: http://play.daumcorp.com/display/ftguide/Jigu+Initialization
  */
-
+/* @ cc_on _d = document; eval(‘var document = _d’) @*/
 (function(){
 	if(!window.$) window.$ = daum.$;	
 	if(!window.$A) window.$A = daum.$A;
 	if(!window.$E) window.$E = daum.$E;
-//	if(!window.$T) window.$T = daum.$T;
-//	if(!window.$C) window.$C = daum.$C;
+	//if(!window.$T) window.$T = daum.$T;
+	//if(!window.$C) window.$C = daum.$C;
 	if(window.Sizzle) window.$$ = daum.$$ = window.Sizzle;
 	daum.extend(daum, daum.Event);
 	daum.extend(daum, daum.Browser);
