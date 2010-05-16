@@ -19,41 +19,82 @@ if( !window.imageViewer ) {
 }	
 
 var _imageViewer = window.imageViewer;
+
 /**
  * @name Initialize
  * @description Initialize Class
  */
-window.imageViewer = {
-	init : function(id) {
-		_imageViewer.DOM.init(id);
-		_imageViewer.DTO.init();
-		_imageViewer.canvas.init();
-	}
-};
-
-
-/**
- * @name pagination
- */
 (function() {
-	var _pagination = function() {
-		var _currentPage = 1;
+	var _Service = window.imageViewer.Service = function() {		
+		var instanceList = [];
+		var currentInstance = null;
 		var method = {
-			info : function() {
-				console.log("_pagination.info");
+			init : function() {
+				// System 분석등...
+				console.log('init');
 			},
-			getCurrentPage : function() {
-				return _currentPage;
+			add : function(data, canvasEl, prevBtnEl, nextBtnEl) {
+				var instance = new _imageViewer.Instance(data, canvasEl, prevBtnEl, nextBtnEl);
+				instanceList.push(instance);
+				return instance;
 			},
-			setCurrentPage : function(v) {
-				_currentPage = v;
+			getInstanceList : function() {
+				return instanceList;
+			},			
+			setCurrnetInstance: function( inst ){
+				curentInstance = inst;
+			},
+			getCurrnetInstance: function(){
+				return curentInstance;
 			}
 		};
 		return method;
 	}();
-	daum.extend(_imageViewer, { pagination : _pagination } );
 })();
 
+/**
+ * @name Instance
+ */
+(function() {
+	var _Instance = function(data, canvasEl, prevBtnEl, nextBtnEl) {
+		this.idx = null;
+		this.data = data;
+		this.canvas = canvasEl;
+		this.prevBtn = prevBtnEl;
+		this.nextBtn = nextBtnEl;
+		this.currentImageIndex = 0;		
+		this.canvasImageSize = null; /* Canvas 에 출력 되는 이미지를 이미지팜에서 구운 이미지(고정크기)를 사용할꺼면 size 를 넣어주면 된다. */
+		this.initialize();
+	};
+	_Instance.prototype = {
+		initialize : function() {
+			
+		},
+		draw : function() {
+			this.canvas.innerHTML = '<img src="' + this.getCanvasImage() + '">'; 
+		},
+		drawThumbs : function() {
+			var template = '<a href="#{link}"><img src="#{image' 
+		},
+		getThumbs : function() {			
+			return this.data.thumbs;
+		},
+		getCurrentImage : function() {
+			return this.getThumbs()[this.currentImageIndex].src;
+		},
+		getCanvasImage : function() {
+			if( !!this.canvasImageSize ) {
+				return this.getCurrentImage().replace(/\/[A-Z]{1}?(\d+)x(\d+)\//, '/'+this.canvasImageSize+'/');
+			} else {
+				return this.getCurrentImage().replace(/\/[A-Z]{1}?(\d+)x(\d+)\//, '/image/');
+			}
+		},
+		setCanvasImageSize : function(size) {
+			this.usingFixedCanvasImage = size;
+		}
+	};
+	daum.extend(window.imageViewer, { Instance : _Instance } );
+})();
 
 /**
  * @name Canvas
@@ -71,7 +112,6 @@ window.imageViewer = {
 			},
 			draw : function() {
 				console.log('draw');
-				console.log(_imageViewer.DOM.getContainer());
 			},
 			init : function() {
 				this.draw();
@@ -129,11 +169,12 @@ window.imageViewer = {
  * @name define variables
  */
 (function() {
+	var CONTAINER_ID = "imageViewer";
+	var PHOTOCANVAS_CLASSNAME = "photoCanvas";
+	var BTNPREV_CLASSNAME = "btnPrev";
+	var BTNNEXT_CLASSNAME = "btnNext";
+
 	var _DOM = function() {
-		var CONTAINER_ID = "imageViewer";
-		var PHOTOCANVAS_CLASSNAME = "photoCanvas";
-		var BTNPREV_CLASSNAME = "btnPrev";
-		var BTNNEXT_CLASSNAME = "btnNext";
 		var _init = function() {
 			if ( !!daum.$$("#" + container.id + " ." + this.className)[0] ) {
 				this.object = daum.$$("#" + container.id + " ." + this.className)[0];
@@ -147,7 +188,6 @@ window.imageViewer = {
 			id : CONTAINER_ID,
 			object : null,
 			init : function(id) {
-				console.log(id);
 				this.id = id || CONTAINER_ID;
 				if ( !!daum.$(this.id) ) {
 					this.object = daum.$(this.id);
@@ -201,7 +241,7 @@ window.imageViewer = {
 				return nextBtn;
 			},
 			setNextBtn : function(className) {
-				nextBtn.className = className;				
+				nextBtn.className = className;
 				return nextBtn.init();
 			},			
 			getThumbnail : function() {
