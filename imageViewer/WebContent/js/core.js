@@ -74,7 +74,7 @@ var _imageViewer = window.imageViewer;
 			this.canvas.innerHTML = '<img src="' + this.getCanvasImage() + '">'; 
 		},
 		drawThumbs : function() {
-			var template = '<a href="#{link}"><img src="#{image' 
+			var template = '<a href="#{link}"><img src="#{image}"></a>';
 		},
 		getThumbs : function() {			
 			return this.data.thumbs;
